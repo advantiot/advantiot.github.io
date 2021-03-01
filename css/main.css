@@ -1,0 +1,445 @@
+/*
+ * Globals
+ * Media Queries
+ * Extra small devices (phones, 575px and down)
+ * @media only screen and (max-width: 575px) {...}
+ * Small devices (landscape phones, 576px and up)
+ * @media (min-width: 576px) { ... }
+ * Medium devices (tablets, 768px and up)
+ * @media (min-width: 768px) { ... }
+ * Large devices (desktops, 992px and up)
+ * @media (min-width: 992px) { ... }
+ * Extra large devices (large desktops, 1200px and up)
+ * @media (min-width: 1200px) { ... }
+
+/* Import Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+/*
+ * Base structure
+ */
+
+body {
+  /*The default web fonts (Helvetica Neue, Helvetica, and Arial) have been dropped in Bootstrap 4 and replaced with a “native font stack” for optimum text rendering on every device and OS. */
+  /*text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);*/
+  /*box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);*/
+  overflow-x: hidden;
+  margin: 0;
+  font-size: .875rem;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+
+  /*background-color: #000;*/
+  /* Center and scale the image nicely. */
+  /*(background-image: url("../img/shaun-darwood-TC6u_HnDDqs-unsplash.jpg");*/
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
+  /*  Add fixed to create a parallax effect. */
+  /* background-attachment: fixed; */
+  /* Add the blur effect */
+  /*
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+  */
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #FFF;
+}
+
+.sidebar .nav-item{
+  display: block;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: inherit;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  background-color: #adb5bd;
+  color: #FFF;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/* Custom classes for the web page/app */
+
+/*
+ * Footer
+ */
+
+footer .credits {
+  font-size: 0.7rem;
+}
+
+/* 
+ * Common component classes
+ */
+
+section {
+  min-height: 100vh;
+}
+
+/* Panels are required for horizontal scrolling sections */
+.panel {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Use vertical-offset when centering block elements vertical inside a panel and container */
+/* This is to compensate for the panel padding which is required to keep the heading below the navbar */
+.vertical-offset {
+  transform: translate(0, -60px); /* Y-value should be equal to .panel padding-top */
+}
+
+section .header, panel.header {
+  font-size: 1.25rem;
+  padding: 10px;
+  background-color: #212529;
+  color: white;
+  width:100%;
+}
+
+/* For horizontal scrolling sections, choose width depending on number of panels */
+.hscroll-200 {
+  width: 200%;
+  display: flex; /* This and flex-wrap are required */
+  flex-wrap: nowrap;
+}
+.hscroll-300 {
+  width: 300%;
+  display: flex; /* This and flex-wrap are required */
+  flex-wrap: nowrap;
+}
+.hscroll-400 {
+  width: 400%;
+  display: flex; /* This and flex-wrap are required */
+  flex-wrap: nowrap;
+}
+.hscroll-500 {
+  width: 500%;
+  display: flex; /* This and flex-wrap are required */
+  flex-wrap: nowrap;
+} 
+
+/* 
+ * Section One: The Header and introduction 
+ */
+#section-intro {
+  /* Center and scale the image nicely. */
+  background-image: url("../img/VividLandscape.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /*  Add fixed to create a parallax effect. */
+  /* background-attachment: fixed; */
+  /* Add the blur effect */
+  /*
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+  */
+}
+
+@media (max-width: 767px) {
+  #div-intro-1{
+    padding-top: 200px !important;
+    /* The backdrop-filter property in CSS is used to apply filter effects (grayscale, contrast, blur, etc) to the background/backdrop of an element. The backdrop-filter has the same effect as the filter property, except the filter effects are applied only to the background and instead of to the element’s content. */
+    backdrop-filter: blur(10px);
+  }
+}
+
+@media (min-width: 768px) {
+  #div-intro-1{
+    padding-top: 50px !important;
+  }
+}
+
+#div-intro-2 {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#img-1{
+  height: 62px;
+  padding-bottom: 19px;
+  position: absolute;
+  left: -12%;
+  top: -60%;
+  transform: rotate(344deg);
+}
+
+/* 
+ * Section One: 
+ */
+
+#div-1-1 {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 20%;
+}
+
+#div-1-2 {
+  position: absolute;
+  right: -20%;
+  top: 20%;
+  width: 20%;
+  height: 10%;
+  border: 1px solid white;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#div-1-3 {
+  position: absolute;
+  right: -20%;
+  top: 35%;
+  width: 20%;
+  height: 10%;
+  border: 1px solid white;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#div-1-4 {
+  position: absolute;
+  right: -20%;
+  top: 50%;
+  width: 20%;
+  height: 10%;
+  border: 1px solid white;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+ * Section Two: 
+ */
+
+/* 
+ * Section Three: 
+ */
+
+/* 
+ * Section Four: 
+ */
+
+/* 
+ * Section Five: 
+ */
+
+/* 
+ * Section Six: 
+ */
+
+/*
+ * General element styling
+ */
+
+.red{
+  background-color:#FF0036;
+}
+
+.airbus-blue {
+  background-color: #183782;
+}
+
+.green{
+  background-color:#6fb936;
+}
+
+.orange {
+  background-color:#f38630;
+}
+.gray,
+.grey {
+  background-color:#989898;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.wrapper {
+  position:absolute;
+  padding:20px;
+}
+
+.empty-space {
+  position: absolute;
+  bottom: 0;
+  height: 300px;
+  width: 100%;
+}
+
+/* Font classes */
+.caveat-brush {
+  font-family: 'Caveat Brush', sans-serif;
+}
+
+.comic-neue {
+  font-family: 'Comic Neue', sans-serif;
+}
+
+/* Tree menu */
+
+ul.nav-menu-list-style{
+  list-style:none; 
+  padding:0px; 
+  margin:0px;
+}
+
+ul.nav-menu-list-style .nav-header .menu-collapsible-icon{
+  position:absolute; 
+  right:3px; 
+  top:16px; 
+  font-size:9px; 
+}
+
+ul.nav-menu-list-style .nav-header{
+  border-top:1px solid #FFFFFF;
+  border-bottom:1px solid #e8e8e8;
+  display:block;
+  margin:0;
+  padding: 0px 8px;
+  line-height:42px;
+  background-color: #e9ecef;
+}
+
+ul.nav-menu-list-style> li {
+  position:relative;
+}
+
+ul.nav-menu-list-style> li a {
+  /*border-top:1px solid #FFFFFF;*/
+  border-bottom:1px solid #e8e8e8;
+  padding:0 10px 0 20px;
+  line-height:42px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.nav-menu-list-style> li:first-child a{
+}
+
+
+
+ul.nav-menu-list-style li .badge,ul.nav-menu-list-style li .pull-right,ul.nav-menu-list-style li span.badge,ul.nav-menu-list-style li label.badge{float:right; margin-top:7px;}
+
+
+
