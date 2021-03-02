@@ -386,9 +386,10 @@ yaw_tl.to("#a321-top-view", {rotation: -15, duration: 5});
 yaw_tl.to("#a321-top-view", {rotation: 15, duration: 5});
 yaw_tl.to("#a321-top-view", {rotation: 0, duration: 5});
 
-/* FUNCTIONS
+/***********
+ * FUNCTIONS
  * Functions to be called on button clicks or other events that will play tweens
- */
+ ***********/
 
  /* Gobal variables */
 
@@ -414,6 +415,14 @@ let yaw = () => {
   yaw_tl.restart(true, true);
 }   
 
+/* Set initial positions for all elements in GSAP code rather than as CSS styling */
+gsap.set(('#vor-instrument-to'), {left:'50%', top:'50%', xPercent:'-50', yPercent:'-50'});
+gsap.set(('#vor-instrument-from'), {left:'50%', top:'50%', xPercent:'-50', yPercent:'-50'});
+gsap.set(('#vor-markings'), {left:'50%', top:'50%', xPercent:'-50', yPercent:'-50'});
+gsap.set(('#vor-cdi'), {left:'50%', top:'50%', xPercent:'-50', yPercent:'-50'});
+gsap.set(('#vor-radial'), {left:'50%', top:'40%', xPercent:'-50', yPercent:'-50', scale: 0.4});
+gsap.set(('#airplane'), {left:'50%', top:'85%', xPercent:'-50', yPercent:'-50', rotation: -90});
+
 /* The timeline needs to be defined inside the function if it takes parameters */
 let vor_markings_rotate = (obs_value_param) => {
   let obs_value = 0;
@@ -432,17 +441,59 @@ let vor_markings_rotate = (obs_value_param) => {
 }
 
 /* Call once on page load to set to 180 degrees as primary course */
+/* Or use a pre-rotated image then this will not be necessary */
 vor_markings_rotate(180);
 
-//Global variables
+//Global variables, positions at start and other initializations
+//Since this is a single page, positions are offset on the screen on reload
 let airplane_start_left = $('#airplane').position().left;
+let vor_cdi_start_left = $('#vor-cdi').position().left;
 let reached_edge = true;
 
-/* Moves the airplane right or left by x and rotates it by degrees */
-let airplane_move = (x, degrees) => {
+/* Calculate and store as global variables the radial range
+ * For each radial calculate as positive or negative values the entry, center and exit points 
+ * wrt the airplane start position, which is at the 180 radial
+ * On entry rotate markings to that radial and move CDI away from center, left or right
+ * At center point, move CDI also to center
+ * The values are calculated once on load, the position is determined by a function getRadial()
+ */
 
+/* Determine if on a radial (only check for a few values) and rotate the primary course value */
+let length_180_radial = parseInt(document.getElementById("vor-radial").getBoundingClientRect().height)/2;
+/* Math.tan() and .sin() and .cos() need angle in radians */
+/* x_first_radial and x_second_radial are positive lengths on left or right side */
+/* Offset everything by airplane_start_position x value */
+let abs_dzr = 0; //distance_zero_radial (abs = absolute)
+let abs_dfr = parseInt(Math.abs(length_180_radial * Math.tan(15 * Math.PI/180))); //distance_first_radial
+let abs_dsr = parseInt(Math.abs(length_180_radial * Math.tan(30 * Math.PI/180))); //distance_second_radial
+let abs_sd = (abs_dfr - abs_dzr) / 2; //half distance between radials, +ve value, equal segments across radials
+
+alert("abs_dzr: " + abs_dzr + "abs_dfr: " + abs_dfr + "abs_dsr: " + abs_dsr);
+
+//For each radial, in an array, store left (-ve wrt airplane), center and right (+ve wrt airplane) points
+let radial_180_points = [-(abs_dzr+abs_sd), abs_dzr, abs_dzr+abs_sd];
+let radial_195_points = [-(abs_dfr+abs_sd), -abs_dfr, -(abs_dfr-abs_sd)];
+let radial_210_points = [-(abs_dsr+abs_sd), -abs_dsr, -(abs_dsr-abs_sd)]; //Left value is left edge for aiplane
+let radial_165_points = [(abs_dfr-abs_sd), abs_dfr, (abs_dfr+abs_sd)];
+let radial_150_points = [(abs_dsr-abs_sd), abs_dsr, (abs_dsr+abs_sd)]; //Right value is right edge for aiplane
+
+console.log(radial_180_points);
+console.log(radial_195_points);
+console.log(radial_210_points);
+console.log(radial_165_points);
+console.log(radial_150_points);
+
+/* FUNCTION: Moves the airplane right or left by x and rotates it by degrees 
+ * The x value passed here from the button click is +ve or -ve indicating right and left movement
+ */
+
+//This needs to be outside of the function so it does not get reset on every call
+let at_radial = 180; //We will only check for 5 values: 150, 165, 180, 195, 210 
+
+let move_airplane = (x, degrees) => {
   let side = "";
   let diff_from_start = 0;
+  let airplane_position = 0;
 
   if($('#airplane').position().left < airplane_start_left) {side = "left"};
   if($('#airplane').position().left > airplane_start_left) {side = "right"};
@@ -456,6 +507,7 @@ let airplane_move = (x, degrees) => {
   let length_180_radial = parseInt(document.getElementById("vor-radial").getBoundingClientRect().height)/2;
   /* Math.tan() and .sin() and .cos() need angle in radians */
   /* x_first_radial and x_second_radial are positive lengths on left or right side */
+  let x_zero_radial = 0;
   let x_first_radial = parseInt(Math.abs(length_180_radial * Math.tan(15 * Math.PI/180)));
   let x_second_radial = parseInt(Math.abs(length_180_radial * Math.tan(30 * Math.PI/180)));
   let max_distance = x_second_radial + 10;
@@ -466,19 +518,6 @@ let airplane_move = (x, degrees) => {
   if(side === "right")
     {diff_from_start = $('#airplane').position().left - airplane_start_left;}
 
-  if(diff_from_start < 4){
-  vor_markings_rotate(180);
-  }
-  if(Math.abs(diff_from_start - x_first_radial) < 4){
-    if (side == "left") vor_markings_rotate(195);
-    if (side == "right") vor_markings_rotate(165);
-
-  }
-  if(Math.abs(diff_from_start - x_second_radial) < 4){
-    if (side == "left") vor_markings_rotate(210);
-    if (side == "right") vor_markings_rotate(150);
-  }
-
   if(diff_from_start > max_distance){
     $("#edge-alert").show();
     //Force reverse direction when at edge, can't stop movement else current x won't ever change
@@ -488,20 +527,104 @@ let airplane_move = (x, degrees) => {
   else{
     $("#edge-alert").hide();
   }
-  let airplane_move_tl = gsap.timeline({repeat: 0, repeatDelay: 1, paused: true});
-  airplane_move_tl.to("#airplane", {rotation: "-="+degrees, duration: 1}, 0)
-                  .to("#airplane", {x: "+="+x}, 0)
+  /* Timelines */
+
+  /* Timeline to move airplane, rotate markings and move CDI */
+  let move_airplane_tl = gsap.timeline({repeat: 0, repeatDelay: 1, paused: true});
+  move_airplane_tl.to("#airplane", {rotation: "-="+degrees, duration: 1}, 0)
+                  .to("#airplane", {x: "+="+x,
+                    onComplete: () => {}
+                    }, 0)
                   .to("#start-heading",{innerHTML: parseInt(Math.abs(start_heading)), duration: 0});
 
-  airplane_move_tl.play();
-  airplane_move_tl.restart(true, true);
+  move_airplane_tl.play();
+  //move_airplane_tl.restart(true, true);
+
+  getRadial($('#airplane').position().left);
+
+  /* Move markings and CDI */
+  /* If the dial is rotated to a new radial, the CDI line should be centered */
+
+  let cdi_x = 0; //How much to move the CDI by
+  let side_of_radial = ""; //Which side of the radial the airplane is on
+  let distance_from_radial = 0;
+  
+  if(Math.abs(diff_from_start - x_zero_radial) < 4){
+    at_radial = 180;
+    cdi_x = 0;
+    distance_from_radial = diff_from_start - x_zero_radial; //Need to know +ve or -ve
+  } else if(Math.abs(diff_from_start - x_first_radial) < 4){
+      distance_from_radial = diff_from_start - x_first_radial; //Need to know +ve or -ve
+      if (side == "left"){
+        at_radial = 195;
+        cdi_x = 0;
+      }
+      if (side == "right"){
+        at_radial = 165;
+        cdi_x = 0;
+      }
+  } else if(Math.abs(diff_from_start - x_second_radial) < 4){
+      distance_from_radial = diff_from_start - x_second_radial; //Need to know +ve or -ve
+      if (side == "left"){ 
+        at_radial = 210;
+        cdi_x = 0;
+      }
+      if (side == "right"){
+        at_radial = 150;
+        cdi_x = 0;
+      }
+  } else{
+      //at_radial remains at last set value
+      //The CDI can move right of left independent of the airplane based on radial
+      //This is determined when moving the CDI, so here pass the absolute value
+      cdi_x = Math.abs(x)/2; 
+  }
+
+  ////Determine side of radial
+  if(side == "left"){
+    if(distance_from_radial < 0){
+      side_of_radial = "right";
+    }else{
+      side_of_radial = "left";
+    }
+  }else if(side == "sight"){
+    if(distance_from_radial < 0){
+      side_of_radial = "left";
+    }else{
+      side_of_radial = "right";
+    }
+  }
+  
+
+  //Move based on x and at_radial values set under conditions above
+  vor_markings_rotate(at_radial);
+  move_vor_cdi(distance_from_radial, at_radial, side_of_radial);
+}
+
+/* Move the CDI line left or right, will be called programmatically depending on airplane position
+ * The CDI needs to move in a direction depending on whether the airplane is to 
+ * the right of the radial (move CDI to the left) or left of the radial (move CDI to the right)
+ * At radials the CDI is centered
+ */
+
+let move_vor_cdi = (cdi_x, at_radial, side_of_radial) => {
+  let move_vor_cdi_tl = gsap.timeline({paused: true});
+  if(cdi_x == 0){ //Reset
+    move_vor_cdi_tl.to("#vor-cdi", {x: 0, 
+      onComplete: () => {/*console.log("to: " + gsap.getProperty("#vor-cdi", "x"));*/}
+      }, 0);
+  }else{
+    move_vor_cdi_tl.to("#vor-cdi", {x: "+="+cdi_x}, 0);
+  }
+  move_vor_cdi_tl.play();
+  move_vor_cdi_tl.restart(true,true);
 }
 
 /* Moves the airplane along the set heading
  * When it reaches the VOR station the center line goes all the way to the left
  * When it crosses the VOR station the To flag changes to From
  */
-let start_flight = (heading) => {
+let startFlight = (heading) => {
   //alert(top + "," + left + "," + width + "," + height);
   //108, 737, 491, 457
   let vor_radial_center = vor_radial_top + vor_radial_height/2;
@@ -525,6 +648,24 @@ let start_flight = (heading) => {
   start_flight_tl.restart(true, true);
 }
 
+/* FUNCTION to return which radial the airplane is at */
+let getRadial = (x_position) => {
+  //Offset position by #airplane centre point (approx .position().left)
+  x_position = x_position - airplane_start_left;
+  if(between(x_position, radial_180_points[0], radial_180_points[2])){
+    alert("x_position: " + x_position + "radial: " + "180");
+  }else if(between(x_position, radial_195_points[0], radial_195_points[2])){
+    alert("x_position: " + x_position + "radial: " + "195");
+  }else if(between(x_position, radial_210_points[0], radial_210_points[2])){
+    alert("x_position: " + x_position + "radial: " + "210");
+  }else if(between(x_position, radial_165_points[0], radial_165_points[2])){
+    alert("x_position: " + x_position + "radial: " + "165");
+  }else if(between(x_position, radial_150_points[0], radial_150_points[2])){
+    alert("x_position: " + x_position + "radial: " + "150");
+  }
+}
+
+/* FUNCTION to return whether it is to the left or right of the radial */
 
 /* JavaScript (jQuery) commands */
 
@@ -561,4 +702,9 @@ let update_toc = (toc_element, heading_text) => {
   //$(toc_element).classList.add("active");
   //document.querySelector(toc_element).classList.add("active");
   document.querySelector("#navbar-text").innerHTML = heading_text;  
+}
+
+/* UTILITY FUNCTIONS */
+let between = (x, min, max) => {
+  return x >= min && x < max; //Keep equal only on one side so there is no overlap at boundary
 }

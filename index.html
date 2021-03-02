@@ -720,22 +720,28 @@
                 There is a really cool VOR Simulator you can play with to understand VOR navigation. It only works on larger screens though! Use your desktop,laptop or a larger tablet!
               </div>
             </div>
-            <div class="container d-xs-none d-md-block p-5">
+            <div class="container d-xs-none d-md-block p-1">
               <div class="row justify-content-center h-100">
                 <div class="col-sm-12 col-md-6 h-100">
                   <div class="row justify-content-center h-100">
                     <!-- Works well to centre an image in a div but use absolute positioning for overlaid elements-->
-                    <div class="col-sm-12 h-50 d-block d-flex justify-content-center align-items-center">
+                    <div class="col-sm-12 h-50 d-block d-flex position-relative justify-content-center align-items-center d-none">
                       <!-- To overlay images absolute positioning is necessary -->
-                      <img id="vor-instrument-to" src="img/vor_instrument_to.jpg" class="w-25 position-absolute top-25 start-25" />
+                      <img id="vor-instrument-to" src="img/vor_instrument_to_250x250px.jpg" class="position-absolute top-25 start-25" />
                       <!-- If changing display using GSAP use style not the d-none class -->
-                      <img id="vor-instrument-from" src="img/vor_instrument_from.jpg" class="w-25 position-absolute top-25 start-25" style="display: none;" />
-                      <!-- Start of with 180 as the primary course radial -->
-                      <img id="vor-markings" src="img/vor_markings.png" class="w-25 position-absolute top-25 start-25" />
-                      <img id="vor-centered_line" src="img/vor_centered_line.png" class="w-25 position-absolute top-25 start-25" />
+                      <img id="vor-instrument-from" src="img/vor_instrument_from_250x250px.jpg" class="position-absolute top-25 start-25" style="display: none;" />
+                      <!-- Start off with 180 as the primary course radial -->
+                      <img id="vor-markings" src="img/vor_markings_250x250px.png" class="position-absolute top-25 start-25" />
+                      <img id="vor-cdi" src="img/vor_cdi_8x100px.png" class="position-absolute top-25 start-25" style="z-index: 20;" />
                       <!-- Occasional issue GSAP animating absolute positionined images but working for now -->
                       <!--<img id="vor-markings" src="img/vor_markings.png" class="w-50" />-->
                     </div>
+
+<div class="col-sm-12 h-50 d-block position-relative">
+  <img id="vor-instrument-to" src="img/vor_instrument_to_250x250px.jpg" class="position-absolute" />
+  <img id="vor-markings" src="img/vor_markings_250x250px.png" class="position-absolute" />
+  <img id="vor-cdi" src="img/vor_cdi_8x100px.png" class="position-absolute" />
+</div>
                     
                     <div class="col-sm-12 h-50 d-flex flex-column p-5">
                       <div class="header mb-3">VOR Simulator</div>
@@ -745,13 +751,13 @@
                           <div class="col-sm-12">
                             <!-- Left, Right and Rotate buttons to move the plane to different points in flight -->
                             <label for="move-plane" class="form-label fw-bold">Re-position Airplane:</label>
-                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="airplane_move(-4,0)">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="move_airplane(-4,0)">
                               <i class="bi bi-arrow-left-square-fill"></i>
                             </button>
-                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="airplane_move(0,-15)">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="move_airplane(0,-15)">
                               <i class="bi bi-arrow-clockwise"></i>
                             </button>
-                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="airplane_move(4,0)">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="move_airplane(4,0)">
                               <i class="bi bi-arrow-right-square-fill"></i>
                             </button>
                             <div class="d-inline-block ms-3">
@@ -786,7 +792,7 @@
                         <div class="row">
                           <div class="col-sm-12">
                             <div class="d-grid gap-2">
-                              <button class="btn btn-primary" type="button" onclick="start_flight()">Start Flight</button>
+                              <button class="btn btn-primary" type="button" onclick="startFlight()">Start Flight</button>
                             </div>
                           </div>
                         </div>
@@ -796,8 +802,8 @@
                 </div>
                 <div class="col-sm-12 col-md-6 h-100 d-block position-relative">
                   <img id="compass-north" src="img/compass_north.png" class="position-absolute top-0 start-0 translate-middle" style="z-index: 10;" />
-                  <img id="vor-radial" src="img/vor_radial.png" class="position-absolute top-25 start-0 w-100" />
-                  <img id="airplane" src="img/fighter-jet-solid_64x51px.png" class="position-absolute start-50" style="bottom: 5vh; transform: translateX(-25px) rotateZ(-90deg); "/>
+                  <img id="vor-radial" src="img/vor_radial.png" class="position-absolute" />
+                  <img id="airplane" src="img/fighter-jet-solid_64x51px.png" class="position-absolute" />
 
                   <div id="edge-alert" class="alert alert-danger position-absolute bottom-0 start-50 p-2" role="alert" style="display: none;">
                     Edge
