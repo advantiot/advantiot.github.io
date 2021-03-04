@@ -187,9 +187,15 @@ let tl_intro = gsap.timeline({
     start: "top -1%",
     end: "bottom 25%",
     scrub: 1,
-    onEnter: () => {},
+    onEnter: () => {
+      document.querySelector("#navbar-text").innerHTML = "";
+      $('.nav-link').removeClass("active");
+    },
+    onEnterBack: () => {
+      document.querySelector("#navbar-text").innerHTML = "";
+      $('.nav-link').removeClass("active");
+    },
     onLeave: () => {},
-    onEnterBack: () => {},
     onLeaveBack: () => {},
   }
 });
@@ -222,28 +228,10 @@ let tl_1_1 = gsap.timeline({
     scrub: 1,
     snap: 1 / (panels_1_1.length - 1),
     markers: false,
-    onEnter: () => {
-      //document.querySelector("#scroller-label-1").classList.add("active");
-      //document.querySelector("#navbar-text").innerHTML = "Principles of Flight";      
-      show_toc('#toc-1'); //Only call on first and last section of every menu group, it will close others
-      update_toc('#toc-1-1', "Principles of Flight");
-      /* Pause the pseudo scroller while moving through horizontal panels */
-      //ScrollTrigger.getById("0").disable(false);
-    },
-    onEnterBack: () => {
-      show_toc('#toc-1');
-      update_toc('#toc-1-1', "Principles of Flight");
-      //ScrollTrigger.getById("0").disable(false);
-    },
-    onLeave: () => {
-      //document.querySelector("#scroller-label-1").classList.remove("active");
-      /* Resume the pseudo scroller */
-      //ScrollTrigger.getById("0").enable(false);
-    },
-    onLeaveBack: () => {
-      //document.querySelector("#scroller-label-1").classList.remove("active");
-      //ScrollTrigger.getById("0").enable(false);
-    },
+    onEnter: () => { updateTOC(1,1); },
+    onEnterBack: () => { updateTOC(1,1); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
   }
 });
 
@@ -260,17 +248,9 @@ let tl_1_2 = gsap.timeline({
     start: "top 0%",
     end: "bottom 25%",
     scrub: 1,
-    onEnter: () => {
-      //document.querySelector("#navbar-text").innerHTML = "Airplane Structure";
-      //document.querySelector("#toc-1-2").classList.add("active");
-      update_toc('#toc-1-2', "Airplane Structure");
-    },
-    onLeave: () => {
-      //document.querySelector("#toc-1-2").classList.remove("active");
-    },
-    onEnterBack: () => {
-      update_toc('#toc-1-2', "Airplane Structure");
-    },
+    onEnter: () => { updateTOC(1,2); },
+    onEnterBack: () => { updateTOC(1,2); },
+    onLeave: () => {},
     onLeaveBack: () => {},
   }
 }); 
@@ -293,27 +273,10 @@ let tl_1_3 = gsap.timeline({
     pin: "#section-1-3",
     scrub: 1,
     snap: 1 / (panels_1_3.length - 1),
-    
-    onEnter: () => {
-      document.querySelector("#navbar-text").innerHTML = "Motion in Air";
-      document.querySelector("#toc-1-3").classList.add("active");
-      /* Pause the pseudo scroller while moving through horizontal panels */
-      ScrollTrigger.getById("0").disable(false);
-    },
-    onEnterBack: () => {
-      document.querySelector("#navbar-text").innerHTML = "Motion in Air";
-      document.querySelector("#toc-1-3").classList.add("active");
-      //ScrollTrigger.getById("0").disable(false);
-    },
-    onLeave: () => {
-      document.querySelector("#toc-1-3").classList.remove("active");
-      /* Resume the pseudo scroller */
-      ScrollTrigger.getById("0").enable(false);
-    },
-    onLeaveBack: () => {
-      document.querySelector("#toc-1-3").classList.remove("active");
-      ScrollTrigger.getById("0").enable(false);
-    },
+    onEnter: () => { updateTOC(1,3); },
+    onEnterBack: () => { updateTOC(1,3); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
   }
 });
 
@@ -334,27 +297,10 @@ let tl_1_4 = gsap.timeline({
     pin: "#section-1-4",
     scrub: 1,
     snap: 1 / (panels_1_4.length - 1),
-    onEnter: () => {
-      document.querySelector("#toc-1-4").classList.add("active");
-      document.querySelector("#navbar-text").innerHTML = "Forces In Flight";
-      /* Pause the pseudo scroller while moving through horizontal panels */
-      ScrollTrigger.getById("0").disable(false);
-    },
-    onEnterBack: () => {
-      document.querySelector("#toc-1-4").classList.add("active");
-      document.querySelector("#navbar-text").innerHTML = "Forces In Flight";
-      //ScrollTrigger.getById("0").disable(false);
-      show_toc('#toc-1');
-    },
-    onLeave: () => {
-      document.querySelector("#toc-1-4").classList.remove("active");
-      /* Resume the pseudo scroller */
-      ScrollTrigger.getById("0").enable(false);
-    },
-    onLeaveBack: () => {
-      document.querySelector("#toc-1-4").classList.remove("active");
-      ScrollTrigger.getById("0").enable(false);
-    },
+    onEnter: () => { updateTOC(1,4); },
+    onEnterBack: () => { updateTOC(1,4); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
   }
 });
 
@@ -375,26 +321,10 @@ let tl_2_1 = gsap.timeline({
     pin: "#section-2-1",
     scrub: 1,
     snap: 1 / (panels_2_1.length - 1),
-    onEnter: () => {
-      document.querySelector("#toc-2-1").classList.add("active");
-      show_toc('#toc-2');
-      /* Pause the pseudo scroller while moving through horizontal panels */
-      ScrollTrigger.getById("0").disable(false);
-    },
-    onEnterBack: () => {
-      document.querySelector("#toc-2-1").classList.add("active");
-      show_toc('#toc-2');
-      //ScrollTrigger.getById("0").disable(false);
-    },
-    onLeave: () => {
-      document.querySelector("#toc-2-1").classList.remove("active");
-      /* Resume the pseudo scroller */
-      ScrollTrigger.getById("0").enable(false);
-    },
-    onLeaveBack: () => {
-      document.querySelector("#toc-2-1").classList.remove("active");
-      ScrollTrigger.getById("0").enable(false);
-    },
+    onEnter: () => { updateTOC(2,1); },
+    onEnterBack: () => { updateTOC(2,1); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
   }
 });
 
@@ -411,58 +341,138 @@ let tl_2_2 = gsap.timeline({
     trigger: "#section-2-2",
     start: "top 0%",
     // base vertical scrolling on how wide the container is so it feels more natural.
-    end: () => "+=" + document.querySelector("#section-2-1").offsetWidth,
+    end: () => "+=" + document.querySelector("#section-2-2").offsetWidth,
     pin: "#section-2-2",
     scrub: 1,
     snap: 1 / (panels_2_2.length - 1),
-    onEnter: () => {
-      document.querySelector("#toc-2-2").classList.add("active");
-      show_toc('#toc-2');
-      /* Pause the pseudo scroller while moving through horizontal panels */
-      ScrollTrigger.getById("0").disable(false);
-    },
-    onEnterBack: () => {
-      document.querySelector("#toc-2-2").classList.add("active");
-      show_toc('#toc-2');
-      //ScrollTrigger.getById("0").disable(false);
-    },
-    onLeave: () => {
-      document.querySelector("#toc-2-2").classList.remove("active");
-      /* Resume the pseudo scroller */
-      ScrollTrigger.getById("0").enable(false);
-    },
-    onLeaveBack: () => {
-      document.querySelector("#toc-2-2").classList.remove("active");
-      ScrollTrigger.getById("0").enable(false);
-    },
+    onEnter: () => { updateTOC(2,2); },
+    onEnterBack: () => { updateTOC(2,2); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
   }
 });
 
 tl_2_2.to(panels_2_2, {xPercent: -100 * (panels_2_2.length - 1), ease: "none"}, 0);
 
 /* 
- * Section 12-5 and its objects
+ * Section 2-3 and its objects
  */
+
+let panels_2_3 = gsap.utils.toArray(".panel-2-3");
+
+let tl_2_3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-2-3",
+    start: "top 0%",
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: () => "+=" + document.querySelector("#section-2-3").offsetWidth,
+    pin: "#section-2-3",
+    scrub: 1,
+    snap: 1 / (panels_2_3.length - 1),
+    onEnter: () => { updateTOC(2,3); },
+    onEnterBack: () => { updateTOC(2,3); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
+  }
+});
+
+tl_2_3.to(panels_2_3, {xPercent: -100 * (panels_2_3.length - 1), ease: "none"}, 0);
+
+/* 
+ * Section 2-4 and its objects
+ */
+
+let panels_2_4 = gsap.utils.toArray(".panel-2-4");
+
+let tl_2_4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-2-4",
+    start: "top 0%",
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: () => "+=" + document.querySelector("#section-2-4").offsetWidth,
+    pin: "#section-2-4",
+    scrub: 1,
+    snap: 1 / (panels_2_4.length - 1),
+    onEnter: () => { updateTOC(2,4); },
+    onEnterBack: () => { updateTOC(2,4); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
+  }
+});
+
+tl_2_4.to(panels_2_4, {xPercent: -100 * (panels_2_4.length - 1), ease: "none"}, 0);
+
+/* 
+ * Section 2-5 and its objects
+ */
+
+let panels_2_5 = gsap.utils.toArray(".panel-2-5");
 
 let tl_2_5 = gsap.timeline({
   scrollTrigger: {
-    id: "2_5",
     trigger: "#section-2-5",
     start: "top 0%",
-    end: "bottom 25%",
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: () => "+=" + document.querySelector("#section-2-5").offsetWidth,
+    pin: "#section-2-5",
     scrub: 1,
-    onEnter: () => {
-      update_toc('#toc-2-5', "VOR Simulator");
-    },
-    onLeave: () => {
-      //document.querySelector("#toc-1-2").classList.remove("active");
-    },
-    onEnterBack: () => {
-      update_toc('#toc-2-5', "VOR Simulator");
-    },
+    snap: 1 / (panels_2_5.length - 1),
+    onEnter: () => { updateTOC(2,5); },
+    onEnterBack: () => { updateTOC(2,5); },
+    onLeave: () => {},
     onLeaveBack: () => {},
   }
-}); 
+});
+
+tl_2_5.to(panels_2_5, {xPercent: -100 * (panels_2_5.length - 1), ease: "none"}, 0);
+
+/* 
+ * Section 3-1 and its objects
+ */
+
+let panels_3_1 = gsap.utils.toArray(".panel-3-1");
+
+let tl_3_1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-3-1",
+    start: "top 0%",
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: () => "+=" + document.querySelector("#section-3-1").offsetWidth,
+    pin: "#section-3-1",
+    scrub: 1,
+    snap: 1 / (panels_3_1.length - 1),
+    onEnter: () => { updateTOC(3,1); },
+    onEnterBack: () => { updateTOC(3,1); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
+  }
+});
+
+tl_3_1.to(panels_3_1, {xPercent: -100 * (panels_3_1.length - 1), ease: "none"}, 0);
+
+/* 
+ * Section 3-2 and its objects
+ */
+
+let panels_3_2 = gsap.utils.toArray(".panel-3-2");
+
+let tl_3_2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-3-2",
+    start: "top 0%",
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: () => "+=" + document.querySelector("#section-3-2").offsetWidth,
+    pin: "#section-3-2",
+    scrub: 1,
+    snap: 1 / (panels_3_2.length - 1),
+    onEnter: () => { updateTOC(3,2); },
+    onEnterBack: () => { updateTOC(3,2); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
+  }
+});
+
+tl_3_2.to(panels_3_2, {xPercent: -100 * (panels_3_2.length - 1), ease: "none"}, 0);
 
 /* 
  * Section Glossary and its objects
@@ -476,15 +486,17 @@ let tl_glossary = gsap.timeline({
     end: "bottom 25%",
     scrub: 1,
     onEnter: () => {
+      $('.nav-link').removeClass("active");
+      document.querySelector("#toc-glossary").classList.add("active");
+      document.querySelector("#navbar-text").innerHTML = "Glossary";
+    },
+    onEnterBack: () => {
+      $('.nav-link').removeClass("active");
       document.querySelector("#toc-glossary").classList.add("active");
       document.querySelector("#navbar-text").innerHTML = "Glossary";
     },
     onLeave: () => {
       document.querySelector("#toc-glossary").classList.remove("active");
-    },
-    onEnterBack: () => {
-      document.querySelector("#toc-glossary").classList.add("active");
-      document.querySelector("#navbar-text").innerHTML = "Glossary";
     },
     onLeaveBack: () => {
       document.querySelector("#toc-glossary").classList.remove("active");
@@ -504,15 +516,17 @@ let tl_references = gsap.timeline({
     end: "bottom 25%",
     scrub: 1,
     onEnter: () => {
+      $('.nav-link').removeClass("active");
+      document.querySelector("#toc-references").classList.add("active");
+      document.querySelector("#navbar-text").innerHTML = "References";
+    },
+    onEnterBack: () => {
+      $('.nav-link').removeClass("active");
       document.querySelector("#toc-references").classList.add("active");
       document.querySelector("#navbar-text").innerHTML = "References";
     },
     onLeave: () => {
       document.querySelector("#toc-references").classList.remove("active");
-    },
-    onEnterBack: () => {
-      document.querySelector("#toc-references").classList.add("active");
-      document.querySelector("#navbar-text").innerHTML = "References";
     },
     onLeaveBack: () => {
       document.querySelector("#toc-references").classList.remove("active");
@@ -796,26 +810,31 @@ $('.nav-link').click(function () {
 })
 
 /* Functions to call when scrolling */
-/* When scrolling, call this function but do not toggle, explicitly hide or show as required */
-let show_toc = (toc_element) => {
-  let selected_group = $(toc_element).parent().children('ul.tree');
+
+/* This function will expand the required group in the ToC and highlight the selected link */
+/* It will also update the page header */
+/* When scrolling do not toggle the ToC, explicitly hide or show as required */
+let updateTOC = (toc_group, toc_link)=> {
+  //Construct the elements with these two values (all sections are toc_group-content, 1-1, 1-2...)
+  //Show/Hide group of ToC links
+  let selected_group = $('#toc-'+toc_group).parent().children('ul.tree');
   $('.tree-toggle').parent().children('ul.tree').not(selected_group).hide(400);
   selected_group.show(400);
-}
 
-let update_toc = (toc_element, heading_text) => {
-  //Remove active class from all toc elements
-  //$('.nav-link').classList.removeClass("active");
-  //Then add active to selected one
-  //$(toc_element).classList.add("active");
-  //document.querySelector(toc_element).classList.add("active");
-  document.querySelector("#navbar-text").innerHTML = heading_text;  
+  //Set selective link to Active
+  $('.nav-link').removeClass("active");
+  $('#toc-'+toc_group+'-'+toc_link).addClass("active");
+  //document.querySelector("#toc-1-4").classList.add("active");
+
+  //Update page header
+  document.querySelector("#navbar-text").innerHTML = $('#section-'+toc_group+'-'+toc_link).attr("data-title");
 }
 
 /* UTILITY FUNCTIONS */
 let between = (x, min, max) => {
   return x >= min && x < max; //Keep equal only on one side so there is no overlap at boundary
 }
+
 
 /******************************** 
 * FUNCTIONS EXECUTED ON PAGE LOAD

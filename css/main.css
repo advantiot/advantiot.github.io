@@ -225,6 +225,11 @@ section .header, panel.header {
   display: flex; /* This and flex-wrap are required */
   flex-wrap: nowrap;
 } 
+.hscroll-600 {
+  width: 600%;
+  display: flex; /* This and flex-wrap are required */
+  flex-wrap: nowrap;
+}
 
 /* 
  * Section One: The Header and introduction 

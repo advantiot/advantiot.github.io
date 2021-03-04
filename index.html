@@ -26,6 +26,97 @@
 
 </head>
 <body>
+
+  <!-- FIXED ELEMENTS START -->
+  <!-- All fixed elements can be placed here -->
+  <!-- Modal -->
+  <!-- IAP Modal -->
+  <div class="modal fade" id="iap-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Instrument Approach Procedure Chart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="image-fluid w-100" src="img/IAP_chicago_midway.jpeg" alt="Chicago Midway - Airport IAP Chart"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Airport Diagram Modal -->
+  <div class="modal fade" id="airport-diagram-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Airport Diagram</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="image-fluid w-100" src="img/FAA_AeronauticalChartsUserGuide_AirportDiagram.png" alt="FAA Airport Diagram Template"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SkyVector World VFR Modal -->
+  <div class="modal fade" id="skyvector-vfr-modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">SkyVector World VFR Chart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="image-fluid w-100" src="img/skyvector_world_vfr_vabb.png" alt="SkyVector World VFR Chart"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SkyVector World Lo Modal -->
+  <div class="modal fade" id="skyvector-lo-modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">SkyVector World Lo Chart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="image-fluid w-100" src="img/skyvector_world_lo_vabb.png" alt="SkyVector World Lo Chart"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SkyVector World Hi Modal -->
+  <div class="modal fade" id="skyvector-hi-modal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">SkyVector World Hi Chart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="image-fluid w-100" src="img/skyvector_world_hi_vabb.png" alt="SkyVector World Hi Chart"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIXED ELEMENTS END -->
+
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><img src="img/advantiot_logo.png" alt="" class="d-inline-block align-top" style="height:36px;"></a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,10 +156,9 @@
               <ul class="nav flex-column nav-list tree bullets">
                 <li class="nav-item"><a id="toc-2-1" class="nav-link" href="#anchor-2-1">Navigation Concepts</a></li>
                 <li class="nav-item"><a id="toc-2-2" class="nav-link" href="#anchor-2-2">Navigation Systems</a></li>
-                <li class="nav-item"><a id="toc-2-3" class="nav-link" href="#anchor-2-3">Aeronautical Charts</a></li>
-                <li class="nav-item"><a id="toc-2-4" class="nav-link" href="#anchor-2-4">Approach Plates</a></li>
-                <li class="nav-item"><a id="toc-2-5" class="nav-link" href="#anchor-2-5">Airport Diagrams</a></li>
-                <li class="nav-item"><a id="toc-2-5" class="nav-link" href="#anchor-2-6">VOR Simulator</a></li>
+                <li class="nav-item"><a id="toc-2-3" class="nav-link" href="#anchor-2-3">VOR Simulator</a></li>
+                <li class="nav-item"><a id="toc-2-4" class="nav-link" href="#anchor-2-4">Aeronautical Charts</a></li>
+                <li class="nav-item"><a id="toc-2-5" class="nav-link" href="#anchor-2-5">ILS</a></li>
               </ul>
             </li>
             <li class="divider"></li>
@@ -76,10 +166,10 @@
             <li>
               <label id="toc-3" class="tree-toggle nav-header"><i class="fas fa-compass"></i> Avionics</label>
               <ul class="nav flex-column nav-list tree bullets">
-                <li class="nav-item"><a id="toc-9" class="nav-link" href="#anchor-3-1">Flight Instruments</a></li>
-                <li class="nav-item"><a id="toc-10" class="nav-link" href="#anchor-3-2">Digital Display</a></li>
-                <li class="nav-item"><a id="toc-11" class="nav-link" href="#anchor-3-3">FMS</a></li>
-                <li class="nav-item"><a id="toc-12" class="nav-link" href="#anchor-3-4">ILS</a></li> 
+                <li class="nav-item"><a id="toc-3-1" class="nav-link" href="#anchor-3-1">Flight Instruments</a></li>
+                <li class="nav-item"><a id="toc-3-2" class="nav-link" href="#anchor-3-2">Digital Displays</a></li>
+                <li class="nav-item"><a id="toc-3-3" class="nav-link" href="#anchor-3-3">FMS</a></li>
+                <li class="nav-item"><a id="toc-3-4" class="nav-link" href="#anchor-3-4">ILS</a></li> 
               </ul>
             </li>
             <li class="divider"></li>
@@ -87,11 +177,11 @@
             <li>
               <label id="toc-4" class="tree-toggle nav-header"><i class="fas fa-plane-departure"></i> Flying</label>
               <ul class="nav flex-column nav-list tree bullets">
-                <li class="nav-item"><a id="toc-13" class="nav-link" href="#anchor-4-1">Pre-Flight Setup</a></li>
-                <li class="nav-item"><a id="toc-14" class="nav-link" href="#anchor-4-2">Taking-Off</a></li>
-                <li class="nav-item"><a id="toc-15" class="nav-link" href="#anchor-4-3">Cruising</a></li>
-                <li class="nav-item"><a id="toc-16" class="nav-link" href="#anchor-4-4">Landing</a></li>
-                <li class="nav-item"><a id="toc-17" class="nav-link" href="#anchor-4-5">Post-Flight Activities</a></li>           
+                <li class="nav-item"><a id="toc-4-1" class="nav-link" href="#anchor-4-1">Pre-Flight Setup</a></li>
+                <li class="nav-item"><a id="toc-4-2" class="nav-link" href="#anchor-4-2">Taking-Off</a></li>
+                <li class="nav-item"><a id="toc-4-3" class="nav-link" href="#anchor-4-3">Cruising</a></li>
+                <li class="nav-item"><a id="toc-4-4" class="nav-link" href="#anchor-4-4">Landing</a></li>
+                <li class="nav-item"><a id="toc-4-5" class="nav-link" href="#anchor-4-5">Post-Flight Activities</a></li>           
               </ul>
             </li>
             <li class="divider"></li>
@@ -114,12 +204,6 @@
           </div>   
         </div>
       </nav>
-
-    <!-- FIXED ELEMENTS START -->
-    <!-- All fixed elements can be placed here -->
-    <!-- <div id="scroller-indicator"><i class="fas fa-fighter-jet"></i></div> -->
-    <!-- FIXED ELEMENTS END -->
-
       <main class="col-md-9 ms-sm-auto col-lg-10 g-0">
         <!-- Section Intro: Introduction -->
         <section id="section-intro" class="position-relative">
@@ -135,8 +219,8 @@
         <!-- Science -->
         <!-- Create dummy anchors for sidebar menu, doesn't work if you link to actual section if it has a h-scroll -->
         <div id="anchor-1-1"></div>
-        <!-- Section 1-1: Principles of Flight -->
-        <section id="section-1-1" class="hscroll-300">
+        <!-- Section 1-1: Science - Principles of Flight -->
+        <section id="section-1-1" data-title="Principles of Flight" class="hscroll-300">
             <!-- Panel 1 -->
           <div class="panel panel-1-1">
             <div class="container">
@@ -262,9 +346,9 @@
           </div>
         </section>
 
-        <!-- Section 1-2: Airplane Structure -->
+        <!-- Section 1-2: Science - Airplane Structure -->
         <div id="anchor-1-2"></div>
-        <section id="section-1-2" class="position-relative">
+        <section id="section-1-2" data-title="Airplane Structure" class="position-relative">
           <div class="container">
             <div class="header">Airplane Structure</div>
             <div class="row justify-content-center">
@@ -275,9 +359,9 @@
           </div>
         </section>
 
-        <!-- Section 1-3: Motion in Air -->
+        <!-- Section 1-3: Science - Motion in Air -->
         <div id="anchor-1-3"></div>
-        <section id="section-1-3" class="hscroll-300">
+        <section id="section-1-3" data-title="Motion in Air" class="hscroll-300">
           <!-- Panel 1 -->
           <div class="panel panel-1-3">
             <div class="container">
@@ -372,9 +456,9 @@
           </div>
         </section>
 
-        <!-- Section 1-4: Forces In Flight -->
+        <!-- Section 1-4: Science - Forces In Flight -->
         <div id="anchor-1-4"></div>
-        <section id="section-1-4" class="hscroll-400">
+        <section id="section-1-4" data-title="Forces In Flight" class="hscroll-400">
           <!-- Panel 1 -->
           <div class="panel panel-1-4">
             <div class="container h-100">
@@ -511,9 +595,9 @@
         </section>
 
         <!-- Navigation -->
-        <!-- Section 2-1: Navigation Concepts -->
+        <!-- Section 2-1: Navigation - Concepts -->
         <div id="anchor-2-1"></div>
-        <section id="section-2-1" class="hscroll-500">
+        <section id="section-2-1" data-title="Concepts" class="hscroll-500">
           <!-- Panel 1 -->
           <div class="panel panel-2-1">
             <div class="container">
@@ -655,19 +739,31 @@
           </div>
         </section>
 
-        <!-- Section 2-2: Navigation Systems -->
+        <!-- Section 2-2: Navigation - Systems -->
         <div id="anchor-2-2"></div>
-        <section id="section-2-2" class="hscroll-500">
+        <section id="section-2-2" data-title="Systems" class="hscroll-500">
           <!-- Panel 1 -->
           <div class="panel panel-2-2">
             <div class="container">
               <div class="header">NDB and ADF</div>
               <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6 p-4">
-
+                  <h4>Non-Directional Beacon (NDB)</h4>
+                  <p>Direction finding (DF), or radio direction finding (RDF), is the measurement of the direction from which a received signal is transmitted. By combining the direction information from two or more suitably spaced receivers, the source of a transmission can be located via a procedure known as triangulation. RDF systems can be used with any radio source, although very long wavelengths (low frequencies) require very large antennas, and are generally used only on ground-based systems.</p>
+                  <p>To overcome the limitations of RDF, a combination of non-directional beacons (NDB) and automatic direcion finders (ADF) came into use. NDB signals follow the curvature of the Earth, so they can be received at much greater distances at lower altitudes. However, NDB signals are also affected more by atmospheric conditions, mountainous terrain, coastal refraction and electrical storms, particularly at long range.</p>
+                  <p>There are four types of non-directional beacons in the aeronautical navigation service:</p>
+                  <ul>
+                    <li>En-route NDBs (used to mark airways)</li>
+                    <li>Approach NDBs</li>
+                    <li>Localizer beacons (used in conjunction with an Instrument Landing System)</li>
+                    <li>Locator beacons (used in conjunction with an Instrument Landing System)</li>
+                  </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 p-3">
-                
+                  <h4>Automatic Direction Finder (ADF)</h4>
+                  <p>NDB navigation consists of two parts — the automatic direction finder (ADF) equipment on the aircraft that detects an NDB's signal, and the NDB transmitter. </p>
+                  <p>The ADF needle points directly at low-frequency non-directional beacons (NDB) but it does not indicate a heading to the station. To get the magnetic bearing to the station, the ADFs fixed compass card requires the pilot to take the relative bearing to or from the station (the angle between the aircraft’s nose or tail and the NDB), and then add the relative bearing to the current magnetic heading to get the magnetic bearing to the station. ADF equipment determines the direction or bearing to the NDB station relative to the aircraft by using a combination of directional and non-directional antennae to sense the direction in which the combined signal is strongest. The pilot may use this bearing to draw a line on the map to show the bearing from the beacon. By using a second beacon, two lines may be drawn to locate the aircraft at the intersection of the lines. This is called a cross-cut.</p>
+                  <p>This bearing may be displayed on a radio magnetic indicator (RMI). In order to track toward an NDB (with no wind), the aircraft is flown so that the needle points to the 0 degree position. The aircraft will then fly directly to the NDB. Similarly, the aircraft will track directly away from the NDB if the needle is maintained on the 180 degree mark. With a crosswind, the needle must be maintained to the left or right of the 0 or 180 position by an amount corresponding to the drift due to the crosswind.</p>
                 </div>
             </div>
             </div>
@@ -678,10 +774,16 @@
               <div class="header">VOR</div>
               <div class="row"> 
                 <div class="col-sm-12 col-md-6 p-4 justify-content-center">
+                  <p>Very high frequency omni-directional range (VOR) is a type of short-range radio navigation system for airplanes, enabling them to determine their position and stay on course by receiving radio signals transmitted by a network of fixed ground radio beacons. A VOR system comprises of a VOR receiver fitted in the airplane and the VOR stations on the ground. There are three types of VOR navigational stations: VOR, VOR-DME (VOR plus distance measuring equipment), and VORTAC (VOR plus the military's tactical air navigation system). Each VOR station can further be classified according to its range, terminal, low altitude, or high altitude. VORs can only be received line-of-sight, so if there is an obstruction between the airplane and the VOR, the receiver not receive a reliable signal even though it is within the station's range.</p>
                   
+
+
                 </div>
                 <div class="col-sm-12 col-md-6 p-4">
-                  
+                  <h5>VOR Radials</h5>
+                  <p>The radio signals transmitted by a VOR station are referred to as radials since they are broadcast in all directions in a circle around the station, 360 radials, one at each degree around the circle. The receiver determines the radial it is on and that indicates the position of the airplane relative to the VOR station. For example, if the receiver receives a 360-degree radial signal, then the airplane is exactly north of the station, if it receives a 90-degree radial signal it is exactly east of the station and so on.</p>
+                  <p>The radials transmitted by a VOR station are aligned to the magnetic north (not the true north). Before using VOR for navigation it must be tuned and identified. Each VOR station has its own frequency and Morse code identifier. The correct radio frequency must be dialled into the receiver to receive the signals. The Morse code is sent as an audio signal that can be heard over the airplane's audio system, which needs to configured to listen. Each VOR has a unique three digit Morse code identifier so by listening to the code the pilot can confirm the receiver is tuned in to the intended VOR.</p>
+                  <p>Since the VOR station transmits the signals as radials (imagine the spokes of a bicycle wheel) the distance between the radials increases the further the airplane is from the station (and decreases as the airplane gets closer to the station). The sensitivity of the VOR instrument when displaying the radial the airplane is on is accordingly higher or lower, since far away from the VOR station the airplane must travel a longer distance to move from one radial to another, whereas closer to the VOR station the airplane may change radials within a very short distance.</p>
                 </div>
               </div>
             </div>
@@ -689,13 +791,37 @@
           <!-- Panel 3 -->
           <div class="panel panel-2-2">
             <div class="container">
-              <div class="header">Flight Directions</div>
+              <div class="header">Using VOR</div>
               <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6 p-4">
-                  
+                  <h5>VOR Instrument</h5>
+                  <p>The VOR indicator has two important positions: the course index on top of the VOR indicator and the reciprocal course index at the bottom of the VOR indicator. The VOR instrument has an OBS (Omni Bearing Selector) knob that the pilot uses to select VOR radials by placing them above the course index (on top of the VOR indicator) or below the reciprocal course index (at the bottom of the VOR indicator).</p>
+                  <p>The bearing selector must be used in conjunction with the To/From flag on the face of the instrument, which indicates whether the airplane is heading towards the VOR station or away from it. It may also show OFF which indicates one of the following:</p>
+                  <ul>
+                    <li>The course index will take the airplane neither To or From the VOR station.</li>
+                    <li>The airplane is directly above the VOR station.</li>
+                    <li>The signal from the VOR station is lost.</li>
+                  </ul>
+                  <p>A needle that shifts Left or Right (either as a straight line shifting or as a pendulum, depending on the type of instrument) called a Course Deviation Indicator (CDI) shows the pilot how many degrees and in which direction from the selected radial the airplane is flying. The direction of deflection tells the pilot where he is relative to the radial, while the dots on the instrument's face tell the pilot how many degrees he is off his course. Each dot represents a 2-degree deflection from the desired course. There are 10 degrees of deflection on either side of the center disk, creating 20 degrees total indicating capability.</p> 
+
+                  <p>To get a bearing to the VOR station, the pilot turns the OBS knob until the CDI needle is centred and the To/From display shows To. The number shown on top of the dial, the course index, is the magnetic bearing from the airplane to the VOR station. For example, if the reading shows the 90° radial, the airplane is 90° from magnetic north, which is east of the station (or the station is to the west of the airplane). If for the same radial reading the To/From flag switches to From, the airplane is now on the west of the station.</p>
+
+                  One important and potential confusing point is that the VOR radial the airplane is on is no indication of its heading. The airplane could be on the 90° radial but heading north, south, east, west or any other direction. 
+
+                  The horizontal situation indicator (commonly called the HSI) is an aircraft flight instrument normally mounted below the artificial horizon in place of a conventional heading indicator. It combines a heading indicator with a VHF omnidirectional range (VOR) and an Instrument Landing System (VOR-ILS) display. This reduces pilot workload by lessening the number of instruments for the pilot to scan.
                 </div>
                 <div class="col-sm-12 col-md-6 p-4">
+                  <h5>Flying To/From the VOR Station</h5>
 
+                  To fly towards the VOR station, the pilot must first get the bearing to the VOR station and then set the course (and heading to correct for wind) of the airplane accordingly. Assuming the bearing is determined to be 90°, with the To/From flag showing To, the course of the aircraft (for simplicity we will assume no wind correction and therefore the Heading is the same as the Course) should be set to 90°. Depending on its original heading, the aircraft will have to turn as required to get to the new heading.
+
+                  The position of the CDI needle will indicate whether or not the airplane is on the selected radial. If exactly along the radial the CDI needle will be centered. If the needle drifts off-center the aircraft would be turned towards the needle until it is centered again. The pilot needs to keep the needle centered to follow the course to the VOR station.
+
+                  Reading the movement of the CDI needle and the position and orientation of the airplane can be a bit confusing. If the needle moves left of centre, it means the airplane is drifting to the right of the radial and should be laterally moved to the left to get back on to the radial, and vice versa. To achieve this lateral correction the heading will have to be temporarily adjusted as required until the needle is centered again.
+
+                  When the airplane reaches the VOR station and is flying over it, the CDI needle may oscillate or move to the extreme right or left. This is expected behaviour and no changes to the heading are required.
+
+                  After the aircraft passes over the VOR station the To/From indicator will indicate "From" and the CDI needle will centre itself again. The aircraft is now proceeding outbound on the 90° radial. 
                 </div>
               </div>
             </div>
@@ -703,7 +829,26 @@
           <!-- Panel 4 -->
           <div class="panel panel-2-2">
             <div class="container">
-              <div class="header">Directional Reference</div>
+              <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 p-4">
+                  <h5>Distance Measuring Equipment (DME)</h5>>
+                  <p>DME is a radio navigation technology, implemented as a combination of ground and airplane equipment, which gives a continuous slant range distance from a DME station by measuring the time taken for a signal transmitted by the aircraft to the station to receive a response. A line-of-visibility between the airplane and ground station is required. An interrogator (the DME equipment on the airplane) initiates an exchange by transmitting a pulse pair, on an assigned channel, to the DME ground station. The channel assignment specifies the carrier frequency and the spacing between the pulses. After a known delay, the DME ground station replies by transmitting a pulse pair on a frequency that is offset from the interrogation frequency by 63 MHz and having specified separation. The calculated distance in nautical miles is displayed on the cockpit instrument.</p>
+                  <p>DME ground stations may be standalone but are usually colocated with a VOR transmitter in a single ground station. When this occurs, the frequencies of the VOR and DME equipment are paired. Such a configuration enables an airplane to determine its bearing and slant range (distance) from the station. The airplane equipment needs to tune in only to the VOR frequency and can listen to the DME signals as well.</p>
+                </div>
+                <div class="col-sm-12 col-md-6 p-4">
+                  <h5>Transponders</h5>
+                  <p>Squawk Codes</p>
+                  <p>Azimuth guidance operations are where the instrument uses a needle pointer to show relative bearings to, or from, a station or waypoint. Typical automatic direction finder (ADF) indicators provide a form of azimuth guidance.
+                  
+                    Course deviation indicator operations are where the instrument shows the lateral displacement of the aircraft from a specified track. Deviation from the track may be displayed as angular displacement-like a conventional instrument-landing system (ILS) or VHF omni ranges (VOR) indication. It may also be displayed as a linear distance that can vary in scale when generated by a global navigation surveillance system or multi-sensor navigation system at different phases of flight.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel 5 -->
+          <div class="panel panel-2-2">
+            <div class="container">
+              <div class="header">Global Positioning System</div>
               <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6 p-4">
                   
@@ -714,15 +859,15 @@
               </div>
             </div>
           </div>
-          <!-- Panel 5 -->
-          <!-- Was VOR Simulator -->
         </section>
 
-        <!-- Section 2-2: VOR Simulator -->
-        <div id="anchor-2-5"></div>
+        <!-- Section 2-3: Navigation - VOR Simulator -->
+        <div id="anchor-2-3"></div>
         <!-- Use the hscroll for styling even if only one panel -->
-        <section id="section-2-5" class="hscroll-100">
-          <div class="panel">
+        <!-- Adding a second panel only to force the section lock on vertical scrolling -->
+        <section id="section-2-3" data-title="VOR Simulator" class="hscroll-200">
+          <!-- Panel 1 -->
+          <div class="panel panel-2-3">
             <div class="container d-xs-block d-md-none">
               <div class="alert alert-success w-75 align-self-center" role="alert">
                 There is a really cool VOR Simulator you can play with to understand VOR navigation. It only works on larger screens though! Use your desktop,laptop or a larger tablet!
@@ -813,11 +958,256 @@
             </div>
             </div>
           </div>
+          <!-- Panel 2 -->
+          <div class="panel panel-2-3">
+            <div class="header">Using the VOR</div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 p-4">
+
+                </div>
+                <div class="col-sm-12 col-md-6 p-4">
+
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
+
+        <!-- Section 2-4: Navigation - Aeronautical Charts -->
+        <div id="anchor-2-4"></div>
+        <section id="section-2-4" data-title="Aeronautical Charts" class="hscroll-200">
+          <!-- Panel 1 -->
+          <div class="panel panel-2-4">
+            <div class="container">
+              <div class="header">SkyVector Charts</div>
+              <div class="row"> 
+                <div class="col-sm-12 col-md-4 p-4 d-flex flex-column">
+                  <div class="d-flex flex-row">
+                    <h5>VFR Chart</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#skyvector-vfr-modal">
+                      See Larger Version
+                    </button>
+                  </div>
+                  <img class="image-fluid align-self-center w-75 mt-5" src="img/skyvector_world_vfr_vabb.png" alt="SkyVector VFR Chart - VABB"/>
+                </div>
+                <div class="col-sm-12 col-md-4 p-4 d-flex flex-column">
+                  <div class="d-flex flex-row">
+                    <h5>World Lo</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#skyvector-lo-modal">
+                      See Larger Version
+                    </button>
+                  </div>
+                  <img class="image-fluid align-self-center w-75 mt-5" src="img/skyvector_world_lo_vabb.png" alt="SkyVector World Lo Chart - VABB"/>
+                </div>
+                <div class="col-sm-12 col-md-4 p-4 d-flex flex-column">
+                  <div class="d-flex flex-row">
+                    <h5>World Hi</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#skyvector-hi-modal">
+                      See Larger Version
+                    </button>
+                  </div>
+                  <img class="image-fluid align-self-center w-75 mt-5" src="img/skyvector_world_hi_vabb.png" alt="SkyVector World Hi Chart - VABB"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel 2 -->
+          <div class="panel panel-2-4">
+            <div class="container">
+              <div class="row"> 
+                <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
+                  <div class="d-flex flex-row">
+                    <h5>Approach Plates</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#iap-modal">
+                      See Larger Version
+                    </button>
+                  </div>
+                  <img class="image-fluid align-self-center w-75" src="img/IAP_chicago_midway.jpeg" alt="Chicago Midway - Airport IAP Chart"/>
+                </div>
+                <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
+                  <div class="d-flex flex-row">
+                    <h5>Airport Diagram</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#airport-diagram-modal">
+                      See Larger Version
+                    </button>
+                  </div>
+                  <img class="image-fluid w-75 align-self-center" src="img/FAA_AeronauticalChartsUserGuide_AirportDiagram.png" alt="Airport Diagram Template"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2-5: Navigation - ILS -->
+        <div id="anchor-2-5"></div>
+        <section id="section-2-5" data-title="Instrument Landing System" class="hscroll-300">
+          <!-- Panel 1 -->
+          <div class="panel panel-2-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 p-4">
+                  <p>An instrument landing system (ILS) is a radio navigation system that provides short-range guidance to aircraft to allow them to approach a runway at night or in bad weather. In its original form, it allows an aircraft to approach until it is 200 feet (61 m) over the ground, within a 1⁄2 mile of the runway. At that point the runway should be visible to the pilot; if it is not, they perform a missed approach. Bringing the aircraft this close to the runway dramatically improves the weather conditions in which a safe landing can be made. Later versions of the system, or "categories", have further reduced the minimum altitudes.</p>
+                  <p>ILS uses two directional radio signals, the localizer(108 to 112 MHz frequency) that provides horizontal guidance, and the glideslope(329.15 to 335 MHz frequency) for vertical. The relationship between the aircraft's position and these signals is displayed on an aircraft instrument, often additional pointers in the attitude indicator. The pilot attempts to maneuver the aircraft to keep these indicators centered while they approach the runway to the decision height. Optional markers provide distance information as the approach proceeds, including the middle marker placed close to the position of the decision height. ILS may also include high-intensity lighting at the end of the runways.</p>
+                </div>
+                <div class="col-sm-12 col-md-6 p-3">
+                  <p>An instrument approach procedure chart (or 'approach plate') is published for each ILS approach to provide the information needed to fly an ILS approach during instrument flight rules (IFR) operations. A chart includes the radio frequencies used by the ILS components or navaids and the prescribed minimum visibility requirements.</p>
+                  <p>An aircraft approaching a runway is guided by the ILS receivers in the aircraft by performing modulation depth comparisons. Many aircraft can route signals into the autopilot to fly the approach automatically. An ILS consists of two independent sub-systems. The localizer provides lateral guidance; the glide slope provides vertical guidance.</p>
+                </div>
+            </div>
+            </div>
+          </div>
+          <!-- Panel 2 -->
+          <div class="panel panel-2-5">
+            <div class="container">
+              <div class="row"> 
+                <div class="col-sm-12 col-md-6 p-4 justify-content-center">
+                  <h5>Localizer</h5>
+                  <p>An instrument landing system localizer, or simply localizer (LOC),[1] is a system of horizontal guidance in the instrument landing system, which is used to guide aircraft along the axis of the runway. In aviation, a localizer is the lateral component of the instrument landing system (ILS) for the runway centerline when combined with the vertical glide slope, not to be confused with a locator, although both are parts of aviation navigation systems.
+
+                    A localizer (like a glideslope) works as a cooperation between the transmitting airport runway and the receiving cockpit instruments. An older aircraft without an ILS receiver cannot take advantage of any ILS facilities at any runway, and much more importantly, the most modern aircraft have no use of their ILS instruments at runways which lack ILS facilities. In parts of Africa and Asia large airports may lack any kind of transmitting ILS system. Some runways have ILS only in one direction, this can however still be used (with a lower precision) known as back beam or "Back Course" which is not associated with a glide slope.
+                    
+                    A localizer (LOC, or LLZ until ICAO standardisation[6]) is an antenna array normally located beyond the departure end of the runway and generally consists of several pairs of directional antennas.
+                    
+                    The localizer will allow the aircraft to turn and match the aircraft with the runway. After that, the pilots will activate approach phase (APP).</p>
+                </div>
+                <div class="col-sm-12 col-md-6 p-4">
+                  <h5>Glide Slope</h5>
+                  <p>Instrument landing system glide path, commonly referred to as a glide path (G/P) or glide slope (G/S), is "a system of vertical guidance embodied in the instrument landing system which indicates the vertical deviation of the aircraft from its optimum path of descent". 
+
+                    The pilot controls the aircraft so that the glide slope indicator remains centered on the display to ensure the aircraft is following the glide path of approximately 3° above horizontal (ground level) to remain above obstructions and reach the runway at the proper touchdown point (i.e. it provides vertical guidance).
+                    
+                     A glide slope station uses an antenna array sited to one side of the runway touchdown zone. The GS signal is transmitted on a carrier signal using a technique similar to that for the localizer. The centre of the glide slope signal is arranged to define a glide path of approximately 3° above horizontal (ground level). The beam is 1.4° deep (0.7° below the glide-path centre and 0.7° above).
+                    
+                    The pilot (or the autopilot, if using autoland) controls the aircraft so that the glide slope indicator remains centered on the display to ensure the aircraft is following the glide path to remain above obstructions and reach the runway at the proper touchdown point (i.e., it provides vertical guidance).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel 3 -->
+          <div class="panel panel-2-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-sm-12 p-4">
+                  <img class="image-fluid w-100" src="img/ILS_diagramsimplified_FAA_AIM.png" alt="ILS Diagram" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 3-1: Avionics - Flight Instruments -->
+        <div id="anchor-3-1"></div>
+        <section id="section-3-1" data-title="Flight Instruments" class="hscroll-400">
+          <!-- Panel 1 -->
+          <div class="panel panel-3-1">
+            <div class="container">
+              <div class="header">The Basic Six-Pack</div>
+              <div class="row justify-content-center">
+                <div class="col-sm-12 p-2 d-flex flex-column">
+                  <img class="image-fluid w-75 align-self-center" src="img/flight_instruments_panel_photo.jpg" alt="Basic Flight Instruments Panel"/>
+                  <div class="alert alert-success w-75 align-self-center text-center" role="alert">
+                    An image of the cockpit instruments panel from an older airplane. While displays and panels may have become more advanced, the layout in analog cockpits remains the same.
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+          <!-- Panel 2 -->
+          <div class="panel panel-3-1">
+            <div class="container">
+              <div class="row"> 
+                <div class="col-sm-12 col-md-4 p-4 text-center">
+                 <h5>Airspeed Indicator</h5> 
+                 <img src="img/airspeed_indicator_art.png" />
+                 <p>The airspeed indicator indicates the airspeed of an aircraft, most often in knots (kn), although kilpmetres per hour (kmph) may also be used. The ASI has standard color-coded markings to indicate safe operation within the limitations of the aircraft. The green arc indicates the normal operating range of the aircraft, from VS1 to VNO. The white arc indicates the flap operating range, VSO to VFE, used for approaches and landings. The yellow arc cautions that flight should be conducted in this range only in smooth air, while the red line (VNE) at the top of the yellow arc indicates damage or structural failure may result at higher speeds.</p>
+                </div>
+                <div class="col-sm-12 col-md-4 p-4 text-center">
+                  <h5>Attitude Indicator</h5> 
+                 <img src="img/attitude_indicator_art.png" />
+                 <p>The attitude indicator, earlier known as the artificial horizon, informs the pilot of the aircraft orientation relative to Earth's horizon, and gives an immediate indication of the smallest orientation change in roll or pitch motion. The miniature aircraft and horizon bar mimic the relationship of the aircraft relative to the actual horizon. Attitude is always presented to users in the unit degrees. However, inner workings such as sensors, data and calculations may use a mix of degrees and radians.</p>
+                </div>
+                <div class="col-sm-12 col-md-4 p-4 text-center">
+                  <h5>Altimeter</h5> 
+                  <img src="img/altimeter_art.png" />
+                  <p>An altimeter measures the altitude of an object above a fixed level. Altitude can be determined based on the measurement of atmospheric pressure. The greater the altitude, the lower the pressure. QFE (Field Elevation) is a pressure setting on the altimeter to set the height above the runway. QNH (Height Above Mean Sea Level) is a pressure setting on the altimeter to set the height above sea level. The most common unit for altimeter calibration worldwide is either hectopascals (hPa) or inches of mercury (inHg).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel 3 -->
+          <div class="panel panel-3-1">
+            <div class="container">
+              <div class="row"> 
+                <div class="col-sm-12 col-md-4 p-4 text-center">
+                 <h5>Turn Coordinator</h5> 
+                 <img src="img/turn_coordinator_art.png" />
+                 <p>A turn coordinator (also known as the turn and slip indicator) is actually two instruments in one device. One indicates the rate of turn, or the rate of change in the aircraft's heading. The other indicates whether the aircraft is in coordinated flight, showing the slip or skid of the turn. The slip indicator is actually an inclinometer that at rest displays the angle of the aircraft's transverse axis with respect to horizontal, and in motion displays this angle as modified by the acceleration of the aircraft. The most commonly used units are degrees per second (deg/s) or minutes per turn (min/tr).</p>
+                </div>
+                <div class="col-sm-12 col-md-4 p-4 text-center">
+                  <h5>Heading Indicator</h5> 
+                 <img src="img/heading_indicator_art.png" />
+                 <p>The heading indicator (also known as the direction indicator) shows the aircraft heading. The heading indicator works using a gyroscope, tied by an erection mechanism to the aircraft yawing plane, i. e. the plane defined by the longitudinal and the transverse axis of the aircraft. As such, any configuration of the aircraft yawing plane that does not match the local Earth horizontal results in an indication error. The heading indicator is arranged such that the gyro axis is used to drive the display, which consists of a circular compass card calibrated in degrees.</p>
+                </div>
+                <div class="col-sm-12 col-md-4 p-4 text-center">
+                  <h5>Vertical Speed Indicator</h5> 
+                  <img src="img/vertical_speed_indicator_art.png" />
+                  <p>The vertical speed indicator (also known as the also known as a Rate of Climb and Descent Indicator)shows the rate of climb or descent. It can be calibrated in metres per second, feet per minute, or knots, depending on country and type of aircraft. It is typically connected to the aircraft's external static pressure source and determines the rate of climb or descent by measuring rate-of-pressure changes. A drop in pressure indicates a climb, an increase in pressure indicates a descent, and no change in pressure indicates level flight.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel 4 -->
+          <div class="panel panel-3-1">
+            <div class="container">
+              <div class="header">Beyond the Basic Six</div>
+              <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 p-4">
+                  <img class="image-fluid w-100" src="img/horizontal_situation_indicator.png" alt="HSI" />
+                </div>
+                <div class="col-sm-12 col-md-6 p-3">
+                  
+                </div>
+            </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 3-2: Avionics - Digital Displays -->
+        <div id="anchor-3-2"></div>
+        <section id="section-3-2" data-title="Flight Instruments" class="hscroll-200">
+          <!-- Panel 1 -->
+          <div class="panel panel-3-2">
+            <div class="container">
+              <div class="header">Primary Flight Display (PFD)</div>
+              <div class="row justify-content-center">
+                <div class="col-sm-12 p-2 d-flex flex-column">
+                  <img class="image-fluid w-75 align-self-center" src="img/xplane_garmin1000_pfd.png" alt="Primary Flight Display"/>
+                </div>
+            </div>
+            </div>
+          </div>
+          <!-- Panel 2 -->
+          <div class="panel panel-3-2">
+            <div class="container">
+              <div class="header">Multi-Function Display (MFD)</div>
+              <div class="row"> 
+                <div class="col-sm-12 p-2 d-flex flex-column">
+                 <img class="image-fluid w-75 align-self-center" src="img/xplane_garmin1000_mfd.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>     
 
         <!-- Section: Glossary -->
         <div id="section-glossary-anchor"></div>
-        <section id="section-glossary" class="position-relative">
+        <section id="section-glossary" data-title="Glossary" class="position-relative">
           <div class="container">
             <div class="header">Glossary</div>
             <div class="row justify-content-center">
@@ -831,16 +1221,20 @@
 
         <!-- Section: References -->
         <div id="section-references-anchor"></div>
-        <section id="section-references" class="position-relative">
+        <section id="section-references" data-title="References" class="position-relative">
           <div class="container">
-            <div class="header">References</div>
             <!-- Section Content -->
             <div class="row justify-content-center">
-              <div class="col-sm-12 col-md-6">
+              <div class="col-sm-12 col-md-6 p-5">
+                <h5>Documents and Videos</h5>
+
+                VOR: https://www.youtube.com/watch?v=iCCk2ch-xL4 (Rising Wings Aviation)
+                ADF: https://www.youtube.com/watch?v=_TZ3EjSYWfY (Rising Wings Aviation)
+
               </div>
 
-              <div class="col-sm-12 col-md-6">
-                <h4>Image Credits</h4>
+              <div class="col-sm-12 col-md-6 p-5">
+                <h5>Image Credits</h5>
                 <span>Airfoil Profile with Labels by: Olivier Cleynen https://commons.wikimedia.org/wiki/User:Ariadacapo;</span>
                 <span>Airfoilf profile blank by https://en.wikipedia.org/wiki/User:Dhaluza</span>
                 <span>Airfoil and airflow from: </span>https://en.wikipedia.org/wiki/Lift_(force)#/media/File:Equal_transit-time_NASA_wrong1_en.svg</span>
@@ -850,7 +1244,13 @@
                 <span>Direction Images by https://mediawiki.ivao.aero/index.php?title=Introduction_to_navigation</span>
                 <span>Fighter Jet Icon by Font Awesome. License: https://fontawesome.com/license</span>
                 <span>Trim Tabs by https://commons.wikimedia.org/wiki/User:Abuk_SABUK</span>
-                <p></p>
+                <span>ILS Diagram by U.S. Dept. of Transportation, Federal Aviation Administration, - Aeronautical Information Manual, https://www.faa.gov/air_traffic/publications/media/AIM_Basic_dtd_10-12-17.pdf, Public Domain, https://commons.wikimedia.org/w/index.php?curid=73512575</span>
+                <span>Basic Flight Instruments (Art) By רונאלדיניו המלך - (username is "en:Ronaldinho the king") Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=77630791</span>
+                <span>Flight Instrument Panel (Photo) By Contributions/Meggar at the English-language Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=3521678</span>
+                <span>Horizontal Situation Indicator by By Mysid - Self-made in Inkscape; based on e.g. File:HSI.PNG., CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=11072657</span>
+                <span>X-Plane Garmin PFD and MFD by X-Plane user Manual</span>
+                <span>Buffalo Airport Diagram by FAA, Public domain, via Wikimedia Commons</span>
+                <span>Chicago Midway IAP, Public domain, via Wikimedia Commons</span>
               </div>
             </div>
           </div>
@@ -875,6 +1275,9 @@
     </div>
   </div>
 
+  <!-- jQuery 3.5.1 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
   <!-- Option 1: Bootstrap v5.0 Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
   </script>
@@ -882,8 +1285,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
 
-  <!-- jQuery 3.5.1 -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  
 
   <!-- GSAP commands -->
   <script src="js/gsap_commands.js"></script>
