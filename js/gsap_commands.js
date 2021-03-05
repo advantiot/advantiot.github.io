@@ -703,9 +703,11 @@ let startFlight = (heading) => {
   let start_flight_tl = gsap.timeline({paused: true});
   start_flight_tl.to("#airplane", {y: "-="+start_distance_to_vor, duration: 10}, 0)
                   //When the airplane reaches the VOR station
-                  
                   .to("#vor-instrument-to", {display:"none"})
+                  //The flag changes to From and the dial rotates to show the reciprocal course index
+                  //as the primary course index
                   .to("#vor-instrument-from", {display:"block"})
+                  .to("#vor-markings", {rotation: 180, duration: 5})
                   //Continue beyond the VOR station
                   .to("#vor-cdi", {x: "+=50"}, 10) //Moves randomly to one end, no action required
                   .to("#airplane", {y: "-="+start_distance_to_vor, duration: 10})
