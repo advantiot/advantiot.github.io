@@ -36,7 +36,7 @@ gsap.set(('#vor-instrument-from'), {left:'50%', top:'50%', xPercent:'-50', yPerc
 gsap.set(('#vor-markings'), {left:'50%', top:'50%', xPercent:'-50', yPercent:'-50'});
 gsap.set(('#vor-cdi'), {left:'50%', top:'50%', xPercent:'-50', yPercent:'-50'});
 gsap.set(('#vor-radial'), {left:'50%', top:'40%', xPercent:'-50', yPercent:'-50'});
-gsap.set(('#airplane'), {left:'50%', top:'85%', xPercent:'-50', yPercent:'-50', rotation: -90});
+gsap.set(('#airplane'), {left:'50%', top:'85%', xPercent:'-50', yPercent:'-50'});
 gsap.set(('#compass-north'), {left:'0%', top:'0%', xPercent:'0', yPercent:'0'});
 
 

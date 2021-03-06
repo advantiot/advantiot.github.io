@@ -167,7 +167,7 @@
               <label id="toc-3" class="tree-toggle nav-header"><i class="fas fa-compass"></i> Avionics</label>
               <ul class="nav flex-column nav-list tree bullets">
                 <li class="nav-item"><a id="toc-3-1" class="nav-link" href="#anchor-3-1">Flight Instruments</a></li>
-                <li class="nav-item"><a id="toc-3-2" class="nav-link" href="#anchor-3-2">Digital Displays</a></li>
+                <li class="nav-item"><a id="toc-3-2" class="nav-link" href="#anchor-3-2">Glass Cockpits</a></li>
                 <li class="nav-item"><a id="toc-3-3" class="nav-link" href="#anchor-3-3">FMS</a></li>
                 <li class="nav-item"><a id="toc-3-4" class="nav-link" href="#anchor-3-4">ILS</a></li> 
               </ul>
@@ -503,7 +503,7 @@
               </div>
 
               <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-6 p-4">
+                <div class="col-sm-12 col-md-6">
                   <ul>
                     <li>
                       <strong>Taxiing (for Take Off):</strong> When the airplane is stationary on the ground and needs to start moving forward on the runway, the force holding it back is the Drag, caused mainly the friction between the wheels and the runway surface. The engines need to generate an amount of Thrust greater than the Drag to start moving forward.
@@ -518,7 +518,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col-sm-12 col-md-6 p-4">
+                <div class="col-sm-12 col-md-6">
                   <ul>
                     <li>
                       <strong>Cruising:</strong> When the airplane reaches the desired altitude and doesn't need to climb any more, the Lift can be reduced to become equal to the Weight, so the airplane does not climb but does not descend due to the pull of the Weight either.
@@ -729,10 +729,12 @@
                       <br/>
                       The Track is the actual path made over the ground in flight. If the Heading is set correctly, the Track will be the same as the Course. If the Heading is not corrected for the wind and is set to be aligned with the Course the wind will push the airplane in a different direction, a Track which will not be aligned with the Course. This will take the airplane away from its intended destination.
                     </li>
+                    <li>
+                      <strong>Bearing</strong>
+                      <br/>
+                      This is used to determine the relative location of a reference point (such as an airport or a radio station) so that the direction of travel can be established. This will be explained in the lesson on Navigation.
+                    </li>
                   </ul>
-                  <div class="alert alert-info" role="alert">
-                    <strong>Bearing</strong> is used to determine the relative location of a reference point (such as an airport or a radio station) so that the direction of travel can be established. This will be explained in the lesson on Navigation.
-                  </div>
                 </div>
               </div>
             </div>
@@ -791,13 +793,18 @@
                 <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
                   <h5>VOR</h5>
                   <p>Very high frequency omni-directional range (VOR) is a type of short-range radio navigation system for airplanes, enabling them to determine their position and stay on course by receiving radio signals transmitted by a network of fixed ground radio beacons. A VOR system comprises of a VOR receiver fitted in the airplane and the VOR stations on the ground. There are two types of VOR navigational stations for civilian use: VOR and VOR-DME (VOR plus distance measuring equipment). Each VOR station can further be classified according to its range, terminal, low altitude, or high altitude. VORs can only be received line-of-sight, so if there is an obstruction between the airplane and the VOR, the receiver not receive a reliable signal even though it is within the station's range.</p>
+                  <p>The radials transmitted by a VOR station are aligned to the magnetic north (not the true north). Before using VOR for navigation it must be tuned and identified. Each VOR station has its own frequency and Morse code identifier. The correct radio frequency must be dialled into the receiver to receive the signals. The Morse code is sent as an audio signal that can be heard over the airplane's audio system, which needs to configured to listen. Each VOR has a unique three digit Morse code identifier so by listening to the code the pilot can confirm the receiver is tuned in to the intended VOR.</p>
                   <img src="img/VOR_DME_BUB.jpeg" class="w-75 align-self-center" />
                 </div>
-                <div class="col-sm-12 col-md-6 p-4">
+                <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
                   <h5>VOR Radials</h5>
-                  <p>The radio signals transmitted by a VOR station are referred to as radials since they are broadcast in all directions in a circle around the station, 360 radials, one at each degree around the circle. The receiver determines the radial it is on and that indicates the position of the airplane relative to the VOR station. For example, if the receiver receives a 360-degree radial signal, then the airplane is exactly north of the station, if it receives a 90-degree radial signal it is exactly east of the station and so on.</p>
-                  <p>The radials transmitted by a VOR station are aligned to the magnetic north (not the true north). Before using VOR for navigation it must be tuned and identified. Each VOR station has its own frequency and Morse code identifier. The correct radio frequency must be dialled into the receiver to receive the signals. The Morse code is sent as an audio signal that can be heard over the airplane's audio system, which needs to configured to listen. Each VOR has a unique three digit Morse code identifier so by listening to the code the pilot can confirm the receiver is tuned in to the intended VOR.</p>
-                  <p>Since the VOR station transmits the signals as radials (imagine the spokes of a bicycle wheel) the distance between the radials increases the further the airplane is from the station (and decreases as the airplane gets closer to the station). The sensitivity of the VOR instrument when displaying the radial the airplane is on is accordingly higher or lower, since far away from the VOR station the airplane must travel a longer distance to move from one radial to another, whereas closer to the VOR station the airplane may change radials within a very short distance.</p>
+                  <p>The radio signals transmitted by a VOR station are referred to as radials since they are broadcast in all directions in a circle around the station, 360 radials, one at each degree around the circle. The receiver determines the radial it is on and that indicates the position of the airplane relative to the VOR station. For example, if the receiver receives a 360-degree radial signal, then the airplane is exactly north of the station, if it receives a 90-degree radial signal it is exactly east of the station and so on.</p>                  
+                  <img src="img/VOR_principle.gif" class="w-50 align-self-center"/>
+                  <div class="alert alert-info align-self-center" role="alert">
+                    A radio beam sweeps around (actually it's done 30 times per second). When the beam is at the local magnetic north direction, the station transmits a second, omni-directional signal. Theoretically the time between this signal and receiving the beam gives the angle from the VOR station, this is 105° now.
+                  </div>
+                  <!-- No space for now so hide next para -->
+                  <p class="d-none">Since the VOR station transmits the signals as radials (imagine the spokes of a bicycle wheel) the distance between the radials increases the further the airplane is from the station (and decreases as the airplane gets closer to the station). The sensitivity of the VOR instrument when displaying the radial the airplane is on is accordingly higher or lower, since far away from the VOR station the airplane must travel a longer distance to move from one radial to another, whereas closer to the VOR station the airplane may change radials within a very short distance.</p>
                 </div>
               </div>
             </div>
@@ -809,25 +816,42 @@
                 <div class="col-sm-12 col-md-6 p-4">
                   <h5>Using VOR</h5>
                   <p>The VOR indicator has two important positions: the primary course index on top of the VOR indicator and the reciprocal course index at the bottom of the VOR indicator. The VOR instrument has an OBS (Omni Bearing Selector) knob that the pilot uses to select VOR radials by placing them above the primary course index or below the reciprocal course index.</p>
-                  <p>The bearing selector must be used in conjunction with the To/From flag on the face of the instrument, which indicates whether the airplane is heading towards the VOR station or away from it. It may also show OFF which indicates one of the following:</p>
-                  <ul>
-                    <li>The course index will take the airplane neither To or From the VOR station.</li>
-                    <li>The airplane is directly above the VOR station.</li>
-                    <li>The signal from the VOR station is lost.</li>
-                  </ul>
-                  <p>A needle that shifts Left or Right (either as a straight line shifting or as a pendulum, depending on the type of instrument) called a Course Deviation Indicator (CDI) shows the pilot how many degrees and in which direction from the selected radial the airplane is flying. The direction of deflection tells the pilot where he is relative to the radial, while the dots on the instrument's face tell the pilot how many degrees he is off his course. Each dot represents a 2-degree deflection from the desired course. There are 10 degrees of deflection on either side of the center disk, creating 20 degrees total indicating capability.</p> 
+                  <p>The bearing selector must be used in conjunction with the To/From flag on the face of the instrument, which indicates whether the airplane is heading towards the VOR station or away from it. The To/From flag may show off if the course index is way off from the VOR station or directly above it, or if the signal is lost. The VOR radial is no indication of the airplane's heading. The airplane could be on the 90° radial (to the east of the VOR station) but heading in any direction. </p>
+
+                  <p>A needle that shifts Left or Right (either as a straight line shifting or as a pendulum, depending on the type of instrument) is called the Course Deviation Indicator (CDI). The position of the CDI needle will indicate whether or not the airplane is on the selected radial. If exactly along the radial the CDI needle will be centered. The direction of deflection tells the pilot where he is relative to the radial, while the dots on the instrument's face tell the pilot how many degrees he is off his course. Each dot represents a 2-degree deflection from the desired course. There are 10 degrees of deflection on either side of the center disk, creating 20 degrees total indicating capability.</p> 
                 </div>
                 <div class="col-sm-12 col-md-6 p-4">
-                  <p>To get a bearing to the VOR station, the pilot turns the OBS knob until the CDI needle is centered and the To/From display shows To. The number shown on top of the dial, the primary course index, is the magnetic bearing from the airplane to the VOR station. For example, if the reading shows the 90° radial, the airplane is directly east of the station. If for the same radial reading the To/From flag switches to From, the airplane is now on the west of the station.</p>
+                  <img src="img/vor_instrument_to_250x250px_transparentbg.png" class="w-50 pe-2 float-start" />
+                  <p>To fly towards the VOR station, the pilot must first get the bearing to the VOR station and then set the course (and heading to correct for wind) of the airplane accordingly. To get a bearing to the VOR station, the pilot turns the OBS knob until the CDI needle is centered and the To flag is shown. The number on top of the dial, the primary course index, is the magnetic bearing from the airplane to the VOR station. For example, if the reading shows the 90° radial, the airplane is directly east of the station. With the same radial reading and the From flag, the airplane is now on the west of the station.</p>
+                  <p>Assuming the bearing is determined to be 90°, with the To/From flag showing To, the course of the airplane (for simplicity we will assume no wind correction and therefore the Heading is the same as the Course) should be set to 270°. Depending on its original heading, the airplane will have to turn as required to get to the new heading.</p>
 
-                  <p>The VOR radial is no indication of the airplane's heading. The airplane could be on the 90° radial (to the east of the VOR station) but heading in any direction. To fly towards the VOR station, the pilot must first get the bearing to the VOR station and then set the course (and heading to correct for wind) of the airplane accordingly. Assuming the bearing is determined to be 90°, with the To/From flag showing To, the course of the airplane (for simplicity we will assume no wind correction and therefore the Heading is the same as the Course) should be set to 270°. Depending on its original heading, the airplane will have to turn as required to get to the new heading.</p>
-
-                  <p>The position of the CDI needle will indicate whether or not the airplane is on the selected radial. If exactly along the radial the CDI needle will be centered. If the needle drifts off-center the airplane would be turned towards the needle until it is centered again. When the airplane is flying over the VOR station the CDI needle may move to the extreme right or left. This is expected behaviour and no changes to the heading are required. After the airplane passes over the VOR station the To/From indicator will indicate "From" and the CDI needle will centre itself again. The airplane is now proceeding outbound on the 270° radial.</p>
+                  <p>If the needle drifts off-center the airplane would be turned towards the needle until it is centered again. When the airplane is flying over the VOR station the CDI needle may move to the extreme right or left. This is expected behaviour and no changes to the heading are required. After the airplane passes over the VOR station the To/From indicator will indicate "From" and the CDI needle will centre itself again. The airplane is now proceeding outbound on the 270° radial.</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- Panel 4 -->
+          <div class="panel panel-2-2">
+            <div class="container">              
+              <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 p-4">
+                  <h5>Distance Measuring Equipment (DME)</h5>
+                  <p>DME is a radio navigation technology, implemented as a combination of ground and airplane equipment, which gives a continuous slant range distance from a DME station by measuring the time taken for a signal transmitted by the airplane to the station to receive a response. A line-of-visibility between the airplane and ground station is required. The DME equipment on the airplane initiates an exchange by transmitting a signal, on an assigned channel and a specified frequency, to the DME ground station. After a known delay, the DME ground station replies by transmitting a signal on another specified frequency. Based on the time taken for the response, the distance in nautical miles can be calculated.</p>
+                  <p>DME ground stations may be standalone but are usually colocated with a VOR transmitter in a single ground station. When this occurs, the frequencies of the VOR and DME equipment are paired. Such a configuration enables an airplane to determine its bearing and slant range (distance) from the station. The airplane equipment needs to tune in only to the VOR frequency and can listen to the DME signals as well.</p>
+                  <img src="img/DME_Slant_and_Plan_range.jpg" class="w-100" />
+                </div>
+                <div class="col-sm-12 col-md-6 p-4">
+                  <h5>Global Positioning System (GPS)</h5>
+                  <p>A satellite navigation or satnav system is a system that uses satellites to provide geo-spatial positioning. It allows small electronic receivers to determine their location (longitude, latitude, and altitude/elevation) to high precision (within a few centimeters to metres) using time signals transmitted along a line of sight by radio from satellites. The system can be used for providing position, navigation or for tracking the position of something fitted with a receiver (satellite tracking). The signals also allow the electronic receiver to calculate the current local time to high precision, which allows time synchronisation. These uses are collectively known as Positioning, Navigation and Timing (PNT). Satnav systems operate independently of any telephonic or internet reception, though these technologies can enhance the usefulness of the positioning information generated.</p>
+                  <p>A satellite navigation system with global coverage may be termed a global navigation satellite system (GNSS). While there are a handful of systems, the most popular now is the Global Positioning System (GPS) supported by the United States and hence such a system is quite often referred to as a GPS system. The use of GNSS in aircraft is becoming increasingly common as it provides very precise aircraft position, altitude, heading and ground speed information.</p>
+                  <div class="alert alert-success align-self-center" role="alert">
+                    In modern airplanes, especially those with electronic displays, GPS has replaced VOR as the primary navigation system due to its higher accuracy, reliability and ease-of-use. It is still useful to understand how to use VOR as a back to GPS and if flying small airplanes that may not have a GPS system. We will cover GPS navigation in detail in Avionics.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel 5 -->
           <div class="panel panel-2-2">
             <div class="container">
               <div class="row justify-content-center">
@@ -840,26 +864,10 @@
                 <div class="col-sm-12 col-md-6 p-4">
                   <h5>Squawk Codes</h5>
                   <p>Air traffic control units use the term "squawk" when they are assigning an airplane a transponder code. Squawk thus can be said to mean "select transponder code" or "squawking xxxx" to mean "I have selected transponder code xxxx". The primary goal of a squawk code is to provide effective communication between the ATC and the aircraft. Prior to departure, aircraft will be given a squawk code, which will be used by ATC to direct the aircraft during its flight. This code will show up on ATC screens and helps provide basic information such as flight plan, speed, altitude, and more.</p>
-                  <p>Squawk codes are four digits, with each being a number between zero and seven. This gives thousands of possible combinations for air traffic control to give to aircraft. There are a few reserved squawk codes.</p>
-
+                  <p>Pilots are required to enter squawk codes into their aircraft transponder to communicate with flight controllers. Only if the correct squawk code is entered into the transponder will it appear on ATC screens with the correct information. The transponder is constantly communicating with the ground and providing “pings” with information.</p>
+                  <p>Squawk codes are four digits, with each being a number between zero and seven. This gives thousands of possible combinations for air traffic control to give to aircraft. There are a few reserved squawk codes, especially for emergencies.</p>
+                  <p>The first of three main emergency codes is Squawk 7500 which is used to indicate that the aircraft has been hijacked and requires emergency support. The second emergency code is Squawk 7600 which is used to communicate to air traffic control that the plane has lost communications with the tower and needs alternate guidance. The third emergency code is Squawk 7700 which is used communicate all other emergencies onboard a flight.
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Panel 5 -->
-          <div class="panel panel-2-2">
-            <div class="container">              
-              <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-6 p-4">
-                  <h5>Global Positioning System</h5>
-                  <p>A satellite navigation or satnav system is a system that uses satellites to provide geo-spatial positioning. It allows small electronic receivers to determine their location (longitude, latitude, and altitude/elevation) to high precision (within a few centimeters to metres) using time signals transmitted along a line of sight by radio from satellites. The system can be used for providing position, navigation or for tracking the position of something fitted with a receiver (satellite tracking). The signals also allow the electronic receiver to calculate the current local time to high precision, which allows time synchronisation. These uses are collectively known as Positioning, Navigation and Timing (PNT). Satnav systems operate independently of any telephonic or internet reception, though these technologies can enhance the usefulness of the positioning information generated.</p>
-                  <p>A satellite navigation system with global coverage may be termed a global navigation satellite system (GNSS). While there are a handful of systems, the most popular now is the Global Positioning System (GPS) supported by the United States and hence such a system is quite often referred to as a GPS system. The use of GNSS in aircraft is becoming increasingly common as it provides very precise aircraft position, altitude, heading and ground speed information.</p>
-                </div>
-                <div class="col-sm-12 col-md-6 p-4">
-                  <h5>Distance Measuring Equipment (DME)</h5>
-                  <p>DME is a radio navigation technology, implemented as a combination of ground and airplane equipment, which gives a continuous slant range distance from a DME station by measuring the time taken for a signal transmitted by the airplane to the station to receive a response. A line-of-visibility between the airplane and ground station is required. An interrogator (the DME equipment on the airplane) initiates an exchange by transmitting a pulse pair, on an assigned channel, to the DME ground station. The channel assignment specifies the carrier frequency and the spacing between the pulses. After a known delay, the DME ground station replies by transmitting a pulse pair on a frequency that is offset from the interrogation frequency by 63 MHz and having specified separation. The calculated distance in nautical miles is displayed on the cockpit instrument.</p>
-                  <p>DME ground stations may be standalone but are usually colocated with a VOR transmitter in a single ground station. When this occurs, the frequencies of the VOR and DME equipment are paired. Such a configuration enables an airplane to determine its bearing and slant range (distance) from the station. The airplane equipment needs to tune in only to the VOR frequency and can listen to the DME signals as well.</p>
                 </div>
               </div>
             </div>
@@ -872,7 +880,7 @@
         <!-- Adding a second panel only to force the section lock on vertical scrolling -->
         <section id="section-2-3" data-title="VOR Simulator" class="hscroll-200">
           <!-- Panel 1 -->
-          <div class="panel panel-2-3">
+          <div class="panel panel-2-3" style="background: #b7e2fc;">
             <div class="container d-xs-block d-md-none">
               <div class="alert alert-success w-75 align-self-center" role="alert">
                 There is a really cool VOR Simulator you can play with to understand VOR navigation. It only works on larger screens though! Use your desktop,laptop or a larger tablet!
@@ -886,8 +894,8 @@
                     <!-- If changing display using GSAP use style not the d-none class -->
                     <!-- All positions are set in GSAP code rather than using CSS but specify position-absolute -->
                     <div class="col-sm-12 h-50 d-block position-relative">
-                      <img id="vor-instrument-to" src="img/vor_instrument_to_250x250px.jpg" class="position-absolute" style="display:block"/>
-                      <img id="vor-instrument-from" src="img/vor_instrument_from_250x250px.jpg" class="position-absolute" style="display:none;" />
+                      <img id="vor-instrument-to" src="img/vor_instrument_to_250x250px_transparentbg.png" class="position-absolute" style="display:block"/>
+                      <img id="vor-instrument-from" src="img/vor_instrument_from_250x250px_transparentbg.png" class="position-absolute" style="display:none;" />
                       <!-- Start off with 180 as the primary course radial -->
                       <img id="vor-markings" src="img/vor_markings_250x250px.png" class="position-absolute" />
                       <img id="vor-cdi" src="img/vor_cdi_8x100px.png" class="position-absolute" />
@@ -951,9 +959,9 @@
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-6 h-100 d-block position-relative">
-                  <img id="compass-north" src="img/compass_north.png" class="position-absolute" style="z-index: 10;" />
-                  <img id="vor-radial" src="img/vor_radial_500x465px.png" class="position-absolute" />
-                  <img id="airplane" src="img/fighter-jet-solid_64x51px.png" class="position-absolute" />
+                  <img id="compass-north" src="img/round-compass.png" class="position-absolute" style="z-index: 10; width: 64px" />
+                  <img id="vor-radial" src="img/vor_radial_transparentbg.png" class="position-absolute" />
+                  <img id="airplane" src="img/prop_airplane_icon_64x64.png" class="position-absolute" />
 
                   <div id="edge-alert" class="alert alert-danger position-absolute bottom-0 start-50 p-2" role="alert" style="display: none;">
                     Edge
@@ -1002,37 +1010,33 @@
           <!-- Panel 1 -->
           <div class="panel panel-2-4">
             <div class="container">
-              <div class="header">SkyVector Charts</div>
               <div class="row"> 
                 <div class="col-sm-12 col-md-4 p-4 d-flex flex-column">
-                  <div class="d-flex flex-row">
-                    <h5>VFR Chart</h5>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#skyvector-vfr-modal">
-                      See Larger Version
-                    </button>
-                  </div>
-                  <img class="image-fluid align-self-center w-75 mt-5" src="img/skyvector_world_vfr_vabb.png" alt="SkyVector VFR Chart - VABB"/>
+                  <h5 class="align-self-center">VFR Chart</h5>
+                  <img class="image-fluid align-self-center w-75 mt-3" src="img/skyvector_world_vfr_vabb.png" alt="SkyVector VFR Chart - VABB"/>
+                  <p class="mt-3">A VFR chart is a type of aeronautical chart designed for navigation under visual flight rules. The chart shows topographical features that are important to aviators, such as terrain elevations, ground features identifiable from altitude (rivers, dams, bridges, buildings, etc.), and ground features useful to pilots (airports, beacons, landmarks, etc.). The chart also shows information on airspace classes, ground-based navigation aids, radio frequencies, longitude and latitude, navigation waypoints, navigation routes. In the United States these are known as sectional charts.</p>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#skyvector-vfr-modal">
+                    See Larger Version
+                  </button>
                 </div>
                 <div class="col-sm-12 col-md-4 p-4 d-flex flex-column">
-                  <div class="d-flex flex-row">
-                    <h5>World Lo</h5>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#skyvector-lo-modal">
-                      See Larger Version
-                    </button>
-                  </div>
-                  <img class="image-fluid align-self-center w-75 mt-5" src="img/skyvector_world_lo_vabb.png" alt="SkyVector World Lo Chart - VABB"/>
+                  <h5 class="align-self-center">IFR En-Route Low</h5>
+                  <img class="image-fluid align-self-center w-75 mt-3" src="img/skyvector_world_lo_vabb.png" alt="SkyVector World Lo Chart - VABB"/>
+                  <p class="mt-3">An en-route chart provides detailed information useful for instrument flight, including information on radio navigation aids (navaids) such as VORs and NDBs, navigational fixes (waypoints and intersections), standard airways, airport locations, minimum altitudes, and so on. Information not directly relevant to instrument navigation, such as visual landmarks and terrain features, is not included.</p>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#skyvector-lo-modal">
+                    See Larger Version
+                  </button>
                 </div>
                 <div class="col-sm-12 col-md-4 p-4 d-flex flex-column">
-                  <div class="d-flex flex-row">
-                    <h5>World Hi</h5>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#skyvector-hi-modal">
-                      See Larger Version
-                    </button>
-                  </div>
-                  <img class="image-fluid align-self-center w-75 mt-5" src="img/skyvector_world_hi_vabb.png" alt="SkyVector World Hi Chart - VABB"/>
+                  <h5 class="align-self-center">IFR En-Route High</h5>
+                  <img class="image-fluid align-self-center w-75 mt-3" src="img/skyvector_world_hi_vabb.png" alt="SkyVector World High Chart - VABB"/>
+                  <p class="mt-3">En-route charts are divided into high and low versions, with information on airways and navaids for high- and low-altitude flight, respectively. The division between low altitude and high altitude is usually defined as the altitude that marks transition to flight levels (in the United States, this is taken to be 18,000 feet MSL by convention).</p>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#skyvector-hi-modal">
+                    See Larger Version
+                  </button>
                 </div>
               </div>
             </div>
@@ -1042,24 +1046,22 @@
             <div class="container">
               <div class="row"> 
                 <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
-                  <div class="d-flex flex-row">
-                    <h5>Approach Plates</h5>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#iap-modal">
-                      See Larger Version
-                    </button>
-                  </div>
-                  <img class="image-fluid align-self-center w-75" src="img/IAP_chicago_midway.jpeg" alt="Chicago Midway - Airport IAP Chart"/>
+                  <h5 class="align-self-center">Approach Plate</h5>
+                  <img class="w-25 mt-3 align-self-center" src="img/IAP_chicago_midway.jpeg" alt="Chicago Midway - Airport IAP Chart"/>
+                  <p class="mt-3">Approach plates (more formally known as Instrument Approach Procedure Charts) provide information to pilots when landing using instrument flight rules (IFR) operations. Approach plates are essential if an airplane is to make a safe landing under instrument meteorological conditions (IMC) such as a low ceiling or reduced visibility due to conditions such as fog, rain or snow. In addition to waypoints, altitudes and minimum visibility requirements necessary to line up an aircraft with a designated runway for landing, they also provide important navigational information such as course headings and navigational aid radio frequencies. This information allows aircraft to safely transition from the enroute airway segment (which provides guidance for safe flight between the flight origination and destination) through the terminal environment (where aircraft transition from the enroute airway segment to the airspace in the immediate vicinity of the airport) to a safe landing on the designated runway.</p>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#iap-modal">
+                    See Larger Version
+                  </button>
                 </div>
                 <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
-                  <div class="d-flex flex-row">
-                    <h5>Airport Diagram</h5>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#airport-diagram-modal">
-                      See Larger Version
-                    </button>
-                  </div>
-                  <img class="image-fluid w-75 align-self-center" src="img/FAA_AeronauticalChartsUserGuide_AirportDiagram.png" alt="Airport Diagram Template"/>
+                  <h5 class="align-self-center">Airport Diagram</h5>
+                  <img class="w-25 mt-3 align-self-center" src="img/FAA_AeronauticalChartsUserGuide_AirportDiagram.png" alt="Airport Diagram Template"/>
+                  <p class="mt-3">Airport diagrams are designed to assist pilots in ground navigating at airports (especially large and complex airports). The information provided can be used for visual navigation and to update flight management systems. Visual details provided includes runway numbers and their headings, dimensions, elevations, gradient, and surfaces, location of buildings, control tower, airport beacon, and other structures. Information for setting up flight systems includes true/magnetic north orientation and geographical coordinates. Airport diagrams are not intended to be used for approach and landing or departure operations</p>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#airport-diagram-modal">
+                    See Larger Version
+                  </button>
                 </div>
               </div>
             </div>
@@ -1074,12 +1076,12 @@
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6 p-4">
-                  <p>An instrument landing system (ILS) is a radio navigation system that provides short-range guidance to airplane to allow them to approach a runway at night or in bad weather. In its original form, it allows an airplane to approach until it is 200 feet (61 m) over the ground, within a 1⁄2 mile of the runway. At that point the runway should be visible to the pilot; if it is not, they perform a missed approach. Bringing the airplane this close to the runway dramatically improves the weather conditions in which a safe landing can be made. Later versions of the system, or "categories", have further reduced the minimum altitudes.</p>
-                  <p>ILS uses two directional radio signals, the localizer(108 to 112 MHz frequency) that provides horizontal guidance, and the glideslope(329.15 to 335 MHz frequency) for vertical. The relationship between the airplane's position and these signals is displayed on an airplane instrument, often additional pointers in the attitude indicator. The pilot attempts to maneuver the airplane to keep these indicators centered while they approach the runway to the decision height. Optional markers provide distance information as the approach proceeds, including the middle marker placed close to the position of the decision height. ILS may also include high-intensity lighting at the end of the runways.</p>
+                  <p>An instrument landing system (ILS) is a radio navigation system that provides precise guidance to pilots to allow them to land an airplane under low visibility conditions (night time or bad weather). ILS systems provide guidance until a certain height above the runway at which point it is expected that the visibility improves and the pilot is able to see the runway to complete the landing. ILS systems are categorised into CAT I, CAT II and CAT III (the most advanced), depending on how advanced they are. The more advanced the system the lower and closer to the runway it will guide you. Both airports and airplanes have to be equipped with the right category of ILS systems, and the pilots must be trained to use them.</p>
+                  <p>The rules for ILS landing allow a pilot to follow the the ILS guidance until a decision height (DH) is reached. At the DH, it is expected that the pilot has sufficient Runway Visual Range (RVR), which is when the pilot of an aircraft can see the runway surface markings or the lights delineating the runway or identifying its centre line. At the DH, if the specified minimum visual reference is available, a missed approach or a go-around must be carried out. A missed-approach or a go-around is when the pilot makes the decision not to continue a landing, and follows procedures to climb, go around and try landing again or to divert to another airport. Go-arounds can happen at any point from the final approach fix to wheels on the runway, but prior to any deceleration device such as brakes, spoilers or thrust reversers being activated.</p>
                 </div>
                 <div class="col-sm-12 col-md-6 p-3">
-                  <p>An instrument approach procedure chart (or 'approach plate') is published for each ILS approach to provide the information needed to fly an ILS approach during instrument flight rules (IFR) operations. A chart includes the radio frequencies used by the ILS components or navaids and the prescribed minimum visibility requirements.</p>
-                  <p>An airplane approaching a runway is guided by the ILS receivers in the airplane by performing modulation depth comparisons. Many airplane can route signals into the autopilot to fly the approach automatically. An ILS consists of two independent sub-systems. The localizer provides lateral guidance; the glide slope provides vertical guidance.</p>
+                  <p>The ILS provides the pilot a recommended path the airplane should follow when landing (referred to as a the glide path) such that it maintains a lateral position that is aligned with the center of the runway and a vertical position (or altitude) that will bring it down to the runway for a smooth landing. An ILS consists of two main sub-systems. The first, which provides the lateral guidance, is known as the Localizer. The second, which gives vertical guidance, is knwon as the Glide Slope. An ILS system may also include marker beacons along the glide path that provides an indication to the pilot if the airplane is deviating from the glide path. Finally, an ILS system may also include approach lighting systems that provide additional visual gudiance to help pilots stay on the glide path.</p>
+                  <p>An instrument approach procedure chart (also known as an approach plate) is published for each airport that supports an ILS approach to provide the information the pilot needs to use the system and follow the correct approach. The chart includes the radio frequencies used by the ILS components or navaids and the prescribed minimum visibility requirements.</p>
                 </div>
             </div>
             </div>
@@ -1097,6 +1099,7 @@
                     A localizer (LOC, or LLZ until ICAO standardisation[6]) is an antenna array normally located beyond the departure end of the runway and generally consists of several pairs of directional antennas.
                     
                     The localizer will allow the airplane to turn and match the airplane with the runway. After that, the pilots will activate approach phase (APP).</p>
+                    <p>ILS uses two directional radio signals, the localizer(108 to 112 MHz frequency) that provides horizontal guidance, and the glideslope(329.15 to 335 MHz frequency) for vertical. The relationship between the airplane's position and these signals is displayed on an airplane instrument, often additional pointers in the attitude indicator. The pilot attempts to maneuver the airplane to keep these indicators centered while they approach the runway to the decision height. Optional markers provide distance information as the approach proceeds, including the middle marker placed close to the position of the decision height. ILS may also include high-intensity lighting at the end of the runways.</p>
                 </div>
                 <div class="col-sm-12 col-md-6 p-4">
                   <h5>Glide Slope</h5>
@@ -1144,7 +1147,14 @@
                     <li><p>Gyroscopic: A gyroscope is a device used for measuring or maintaining orientation and angular velocity. It is a spinning wheel or disc in which the axis of rotation is free to assume any orientation by itself. By the principle of gyroscopic inertia, once the wheel starts spinning around any axis, it tends to keep the disc stable about that axis. The axis of rotation and the resistance to change provides inputs that are used by flight instruments to measure and indicate the attitude, heading, and coordinated turn, or pitch and roll movements.</p></li>
                   </ul>
                 </div>
-            </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 p-5 pt-0 d-flex flex-column">
+                  <div class="alert alert-info align-self-center" role="alert">
+                    Units of measurement for distance and speed are different in aviation than from what are used in surface transport. Distance is measured in nautical miles and speed is measured in knots. A nautical mile is based on the circumference of the earth, and is equal to one minute of latitude. It is slightly more than a surface mile (1 nautical mile = 1.1508 surface miles). A knot is one nautical mile per hour (1 knot = 1.15 miles per hour).
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- Panel 2 -->
@@ -1222,9 +1232,9 @@
 
         </section>
 
-        <!-- Section 3-2: Avionics - Digital Displays -->
+        <!-- Section 3-2: Avionics - Glass Cockpits -->
         <div id="anchor-3-2"></div>
-        <section id="section-3-2" data-title="Flight Instruments" class="hscroll-200">
+        <section id="section-3-2" data-title="Glass Cockpits" class="hscroll-200">
           <!-- Panel 1 -->
           <div class="panel panel-3-2">
             <div class="container">
@@ -1300,6 +1310,10 @@
                 <span>Azimuth Illustration by By TWCarlson - File:Azimut_altitude.svg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17727911</span>
                 <span>Intercepting VOR Radials Illustration by By Orion 8 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=29757513</span>
                 <span>VOR Station Brussels by By Ben Pirard at Dutch Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=3219206</span>
+                <span>Compass markings by Fred the OysteriThe source code of this  SVG is valid. This  vector image was created with Adobe Illustrator., CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</span>
+                <span><div>Compass Icon: Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></span>
+                <span>VOR Principle Animated GIF By Orion 8 - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=29782555</span>
+                <span>Slant Range Illustration by Flyermanu, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</span>
               </div>
             </div>
           </div>
