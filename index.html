@@ -18,11 +18,11 @@
   <script src="https://kit.fontawesome.com/059ac2e5f9.js" crossorigin="anonymous"></script>
 
   <!-- Favicons -->
-  <link rel="icon" href="https://res.cloudinary.com/advantiot/image/upload/v1612715448/MarketingMedia/favicon.ico">
+  <link rel="icon" href="img/favicon.ico">
   <meta name="theme-color" content="#7952b3">
 
   <!-- Custom styles for this page/app -->
-  <link href="./css/main.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 
 </head>
 <body>
@@ -167,9 +167,8 @@
               <label id="toc-3" class="tree-toggle nav-header"><i class="fas fa-compass"></i> Avionics</label>
               <ul class="nav flex-column nav-list tree bullets">
                 <li class="nav-item"><a id="toc-3-1" class="nav-link" href="#anchor-3-1">Flight Instruments</a></li>
-                <li class="nav-item"><a id="toc-3-2" class="nav-link" href="#anchor-3-2">Glass Cockpits</a></li>
-                <li class="nav-item"><a id="toc-3-3" class="nav-link" href="#anchor-3-3">FMS</a></li>
-                <li class="nav-item"><a id="toc-3-4" class="nav-link" href="#anchor-3-4">ILS</a></li> 
+                <li class="nav-item"><a id="toc-3-2" class="nav-link" href="#anchor-3-2">FMS</a></li>
+                <li class="nav-item"><a id="toc-3-3" class="nav-link" href="#anchor-3-3">Glass Cockpits</a></li>
               </ul>
             </li>
             <li class="divider"></li>
@@ -1129,7 +1128,7 @@
                   <p>The localizer equipment is positioned at the far end of the runway. It transmits two signals laterally, one at 90 Hz and the second at 150 Hz along adjacent paths which intersect along a line aligned with the runway center line. The ILS receiver on the airplane receives both signals and determines the line at which they intersect, which is the center line of the runway and the line along which the airplane should fly. The instrument then indicates to the pilot if the airplane deviates laterally from the center line so the pilot can course correct.</p>
                   <h5>Glide Slope</h5>
                   <p>The glideslope equipment is located in the runway touchdown zone, and about 400 to 600 feet from the side of a runway's centerline. Just like the localizer, the glideslope also transmits two signals at the same two frequencies as the localizer, but aligned vertically. The ILS receiver on the airplane receives both signals and determines the line at which they intersect, which is the slope of descent along which the airplane should fly. The instrument then indicates to the pilot if the airplane deviates vertically from the slope line so the pilot can course correct. Typically, a glideslope will take the airplane down towards the runway at a 3 degree angle.</p>
-                  <p>The localizer signal is in the 108 to 112 MHz frequency, while the glideslope signal is in the 329.15 to 335 MHz frequency. We will see how to read the ILS signals on the fligt instruments in the lessons on Glass Cockpits. The diagram on the bottom is a part of an IAP that provides information about the ILS approach at that airport.</p>
+                  <p>The localizer signal is in the 108 to 112 MHz frequency, while the glideslope signal is in the 329.15 to 335 MHz frequency. We will see how to read the ILS signals on the flight instruments in the lessons on Glass Cockpits. The diagram on the bottom is a part of an IAP that provides information about the ILS approach at that airport.</p>
                 </div>
                 <div class="col-sm-12 col-md-6 p-4 text-center">
                   <img class="image-fluid w-100" src="img/ils_signals_instrument.png" alt="ILS Signals" />
@@ -1268,32 +1267,131 @@
 
         </section>
 
-        <!-- Section 3-2: Avionics - Glass Cockpits -->
+        <!-- Section 3-2: Avionics - Flight Management System -->
         <div id="anchor-3-2"></div>
-        <section id="section-3-2" data-title="Glass Cockpits" class="hscroll-200">
-          <!-- Panel 1 -->
-          <div class="panel panel-3-2">
-            <div class="container">
-              <div class="header">Primary Flight Display (PFD)</div>
-              <div class="row justify-content-center">
-                <div class="col-sm-12 p-2 d-flex flex-column">
-                  <img class="image-fluid align-self-center" src="img/fs2020_garmin1000_pfd.png" alt="Primary Flight Display"/>
-                </div>
-            </div>
-            </div>
+        <section id="section-3-2" data-title="Flight Management System">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 p-4">
+                <p>A Flight Management System (FMS) is the heart of a modern avionics system in any airplane. It is a specialized computer system that automates a wide variety of in-flight tasks, reducing the workload on the flight crew. Its primary function is the management of the flight plan during flight. Using various sensors (such as GPS, INS, and radio navigation) to determine the position of the airplane, the FMS can guide the airplane along the programmed flight plan. From the cockpit, the FMS is normally controlled through a user interface that includes a small screen and keyboard or touchscreen for the pilot to input and view data. More on this in the section on Glass Cockpits.</p>
+              </div>
+              <div class="col-sm-12 col-md-6 p-4">
+                <p>An FMS maintains a navigation database (NDB). The navigation database contains the elements from which the flight plan is constructed. The NDB contains all of the information required for building a flight plan, including:</p>
+                <ul>
+                  <li>Waypoints/Intersection</li>
+                  <li>Airways: A defined corridor that connects one specified location to another at a specified altitude, along which an airplane that meets the requirements of the airway may be flown (low altitude airways for smaller airplanes and high altitude airways for larger airplanes).</li>
+                  <li>Radio navigation aids including distance measuring equipment (DME), VHF omnidirectional range (VOR), non-directional beacons (NDBs) and instrument landing systems (ILSs).</li>
+                  <li>Airports, runways and related information</li>
+                  <li>Standard instrument departure (SID): SID routes, also known as departure procedures (DP), are published flight procedures followed by aircraft on an IFR flight plan immediately after takeoff from an airport.</li>
+                  <li>Standard terminal arrival (STAR): A STAR is a published flight procedure followed by airplane on an instrument flight rules (IFR) flight plan just before reaching a destination airport.</li>
+                  <li>Instrument approach procedure (IAP): A series of predetermined maneuvers for the orderly transfer of an aircraft under instrument flight conditions from the beginning of the initial approach to a landing or to a point from which a landing may be made visually.</li>
+                </ul>
+              </div>
           </div>
-          <!-- Panel 2 -->
-          <div class="panel panel-3-2">
-            <div class="container">
-              <div class="header">Multi-Function Display (MFD)</div>
-              <div class="row"> 
-                <div class="col-sm-12 p-2 d-flex flex-column">
-                 <img class="image-fluid w-75 align-self-center" src="img/xplane_garmin1000_mfd.png" />
+          </div>
+        </section>
+        
+         <!-- Section 3-3: Avionics - Glass Cockpits -->
+         <div id="anchor-3-3"></div>
+         <section id="section-3-3" data-title="Glass Cockpits" class="hscroll-300">
+            <!-- Panel 1 -->
+            <div class="panel panel-3-3">
+              <div class="container">
+                <div class="header">Overview</div>
+                <div class="row"> 
+                  <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
+                    <p>A glass cockpit is an airplane cockpit that features electronic (digital) flight instrument displays, typically large LCD screens, rather than the traditional analog dials and mechanical gauges. A glass cockpit uses several multi-function displays driven by flight management systems, that can be configured to display flight information as needed. This simplifies airplane operation and navigation and allows pilots to focus only on the most relevant information.</p>
+                    <p>One of the more popular interfaces, and the one available in FS2020 is the Garmin 1000 Primary Flight Display (PFD) and Multi-Function Display (MFD). Both have similar buttons and knobs but offer different functionality in the normal mode of operation. The PFD also has a "reversionary mode" which, if activated, displays the PFD information on the the MFD (for example, engine gauges and navigational information). This capability is provided in case of an PFD failure. The next few sections go through the PFD and MFD functionality in detail.</p>
+                  </div>
+                  <div class="col-sm-12 col-md-6 p-4 d-flex flex-column">
+                    <img class="image-fluid w-100 align-self-center" src="img/Airbus_A380_cockpit_resized.jpg" />
+                    <p>The glass cockpit in the Airbus A380.</p>
+                    <p class="fs-6">By Naddsy - https://www.flickr.com/photos/83823904@N00/64156219/, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=2997916</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>     
+           <!-- Panel 2 -->
+           <div class="panel panel-3-3">
+             <div class="container">
+               <div class="header">PFD and MFD Panel Layout</div>
+               <div class="row">
+                 <div class="col-sm-12 p-2 d-flex flex-column align-items-center">
+                   <svg viewBox="0 0 843 550" width="843px" height="550px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <image xlink:href="img/g1000_pfd_blank_843x550.jpg"></image>
+                    <!-- 1 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="NAV Audio Levels" data-bs-content="When passing over some NAVAIDS a noise can be heard from the PFD. This knob is to increase or lower the volume of that noise.">
+                      <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="47.045" cy="35.547" r="15.565"></circle>
+                    </a>
+                    <!-- 2 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Switch Active NAV Frequency" data-bs-content="Two frequency numbers are displayed for each channel, one is the active frequency and the other (highlighted) is the one being tuned. This button is to swap the two - make the newly tuned frequency active and move the active frequency to the tuning (highlighted) side. This is useful to tune in to the next NAVAID frequency in advance and swap when required.">
+                      <rect style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0); stroke-linejoin: round;" x="57.326" y="61.014" width="38.982" height="24.262" rx="5" ry="5"></rect></a>
+                    <!-- 3 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Navigation Tuning" data-bs-content="This is dual knob, an outer (smaller) knob and an inner (bigger) knob. It is used to tune in to a NAVAID frequency. The knob changes the frequency being tuned (highlighted) not the active one. The inner knob changes the number to the left of the decimal while the outer knob changes the number after the decimal.">
+                      <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="41.745" cy="121.261" r="15.565"></circle>
+                    </a>
+                    <!-- 4 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Heading" data-bs-content="This knob changes the heading you want to set for the airplane. This is used by the autopilot when engaged.">
+                    <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="47.409" cy="224.457" r="15.565"></circle>
+                    </a>
+                    <!-- 5 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Auto Pilot" data-bs-content="This is a panel of buttons used when autopilot is engaged. The first one on the top left (AP) is used to engage or disengage autopilot.">
+                      <rect style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0); stroke-linejoin: round;" x="10.29" y="269.598" width="88.554" height="192.16" rx="5" ry="5"></rect></a>
+                    <!-- 6 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" title="Altitude" data-bs-content="This is dual knob, an outer (smaller) knob and an inner (bigger) knob. It changes the altitude you want to set for the airplane to be used by the autopilot when engaged. The inner knob changes the thousands unit and the outer knob changes the hundreds uints.">
+                    <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="39.884" cy="518.779" r="15.565"></circle>
+                    </a>
+                    <!-- 7 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" title="Soft Keys" data-bs-content="These are referred to as soft keys since their functionality changes depending on what is being viewed or configured on the PFD. The functionality for each of these keys is dynamically displayed on the screen (as we will see when we review the display).">
+                      <rect style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" x="128.249" y="496.026" width="584.776" height="32.976" rx="5" ry="5"></rect>
+                    </a>
+                    <!-- 8 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" title="Cursor" data-bs-content="This is dual knob, an outer (smaller) knob and an inner (bigger) knob and can be pushed in. When the Flight Management System screens are active, this knob is pushed to activate the cursor and then to move the cursor to the field where data needs to be entered. When pushed out, it is used to enter the data - rotating the knobs selects letters of the alphabet and numbers in sequence.">
+                      <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="805.333" cy="516.782" r="15.565"></circle>
+                    </a>  
+                    <!-- 9 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Flight Management System" data-bs-content="The buttons on this panel are used to manage various options in the FMS as displayed on the PFD.">
+                      <rect style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0); stroke-linejoin: round;" x="742.992" y="363.133" width="85.327" height="97.138" rx="5" ry="5"></rect>
+                    </a>
+                    <!-- 10 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Map Range (Zoom) and Pan" data-bs-content="This knob changes the range (zooms in or out) of the map if it is selected to be displayed as an inset. This button is more useful on the MFD which is generally used to display the map on the full screen.">
+                      <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="797.267" cy="317.725" r="15.565"></circle>
+                    </a>  
+                    <!-- 11 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Course and Barometer" data-bs-content="This is dual knob, an outer (smaller) knob and an inner (bigger) knob and can be pushed in. It is used to change the course setting for the aiplane and the reference barometric pressure based on which all pressure-dependent readings are determined by the flight instruments.">
+                      <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="806.908" cy="222.337" r="15.565"></circle>
+                    </a>
+                    <!-- 12 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="COM Frequency Tuning" data-bs-content="This is used to tune the voice communication frequency, with ATC or other airplanes. It works just like the NAV comm controls with a dual knob and a dual (active and tuning display) and a swap button (above).">
+                    <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="806.773" cy="125.8" r="15.565"></circle>
+                    </a>
+                    <!-- 13 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Switch Active COM Frequency" data-bs-content="This works just like the swap button for NAV comm to swap the active and tuned frequencies.">
+                      <rect style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0); stroke-linejoin: round;" x="746.003" y="60.044" width="38.982" height="24.262" rx="5" ry="5"></rect>
+                    </a>
+                    <!-- 14 -->
+                    <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="G1000 Volume - NOOP" data-bs-content="This is the device volume knob to increase or decrease the volume of device as it dounds alerts or speaks out information. This is not operational on the FS2020.">
+                    <circle style="fill: rgb(0, 255, 0, 0.1); stroke: rgb(0, 255, 0);" cx="798.446" cy="36.311" r="15.565"></circle>
+                    </a>
+                  </svg>
+                  
+                 </div>
+             </div>
+             </div>
+           </div>
+           <!-- Panel 3 -->
+           <div class="panel panel-3-3">
+             <div class="container">
+               <div class="header">Multi-Function Display (MFD)</div>
+               <div class="row"> 
+                 <div class="col-sm-12 p-2 d-flex flex-column">
+                  <img class="image-fluid align-self-center" src="img/g1000_pfd_blank_843x550.jpg" />
+                 </div>
+               </div>
+             </div>
+           </div>
+         </section>     
 
         <!-- Section: Glossary -->
         <div id="section-glossary-anchor"></div>
@@ -1394,3 +1492,156 @@
 
 </body>
 </html>
+
+
+<!--
+G1000 Content
+
+
+CHEAT SHEET
+Check the tuning box before using COM or NAV controls (e.g. frequency, volume, transfer).
+Data entry requires a flashing cursor to begin.
+Press the FMS knob to turn the cursor ON if it is OFF and OFF if it is ON.
+The LARGE FMS knob changes the cursor location.
+The SMALL FMS knob changes the information (e.g. letters or numbers) displayed at the cursor location.
+If you make a mistake in data entry you can usually back up one step at a time by pressing the FMS knob.
+To navigate through the pages on the MFD, use the LARGE FMS knob to change Page Groups.
+The SMALL FMS knob changes Pages within the current Page Group.
+Select the Flight Plan Page Group by pressing the FPL key.
+Always look for Softkeys first. If there is no Softkey, then use the Menu key.
+For GFC 700 AFCS (autopilot/flight director) operation, check the Status Box first, activate the appropriate command(s), then
+RECHECK the Status Box to verify the active and armed modes.
+Use the PROC (Procedures) key to load and activate Instrument Approach Procedures in the active flight plan.
+
+MOST-USED MFD PAGES
+MAP Page 1 Navigation
+MAP Page 4 Weather Datalink
+WPT Page 1 Airport Information
+FPL Page 2 Active Flight Plan
+AUX Page 1 Trip Planning
+Aux Page 3 GPS Status
+Aux Page 4 System Setup
+
+Garmin 1000 PFD Buttons
+
+LEFT PANEL:
+
+
+BOTTOM PANEL Softkeys:
+
+Inset:
+
+PFD:
+
+CDI:
+
+ADF/DME:
+
+XPDR:
+
+TMR/REF:
+
+Shows the TIMER and recommended speeeds (Glide, Vr, Vx, Vy)
+
+NRST:
+
+ALERTS:
+
+RIGHT PANEL:
+
+
+
+
+Taking Flight
+
+Step 1: Select an airplane
+
+
+Step 2: Create a flight plan on the World Maps page.
+
+2.1: 
+2.2.1: VFR (Direct - GPS)
+
+
+
+SkyVector:
+
+  
+
+2.2.2: VFR (VOR - VOR)
+
+Similar to GPS waypoints, in this case, the flight simulator will suggest a route with appropriate VORs along the way. Alternately, you can use SkyVector to select your own VORs. Using SkyVector also give you the VOR station frequency details which the FS does not.
+
+
+
+Note: A SKyVector tutorial is out of the scope of this tutorial, refer to online help. SkyVector has more detailed information for some countries and regions than for others so select airports in the US for maximum detail.
+
+In FS2020: 
+
+A flight plan is better set up using the MFD than the PFD.
+
+Step 3: Pre-takeoff Checklist
+
+Determine the VOR frequency of the next way point and enter it as active in the NAV1 COM. Using the PFD softkeys, select the BRG1 option to show the distance to the NAV1 VOR.
+A second waypoint can be set on NAV2 COM and seen by selecting BRG2.
+
+Autopilot + Nav Mode
+ 
+Flight level Change (FLC):
+
+Flight Level Change (FLC) Mode (a.k.a. Speed Mode), is an autopilot setting that adjusts the airplane pitch to maintain a constant selected airspeed. When you engage FLC during a climb or descent, the autopilot will hold the aircraft in the climb or descent at the airspeed selected. With FLC engaged, when you increase power, your vertical speed increases. Conversely, when you reduce power, vertical speed decreases.
+
+This mode is extremely helpful when ATC requests you to maintain a specified airspeed in a climb or descent. It also protects you from getting slow in a climb (more on that in a bit). Generally speaking, FLC is the best mode to use in a climb.
+
+The other mode is the Vertical Speed Mode, in which the autopilot will attempt to maintain the specified Foot-Per-Minute vertical speed until the aircraft reaches the selected altitude. While V/S Mode works for both climbs and descents, it is best used for descents. When climbing in the V/S mode, the aircraft will try to fly the specified climb rate, regardless of airspeed and in a worst-case scenario, the airspeed will go low enough to cause the airplane to stall.
+
+Set the speed bugs for critical/reference speeds for use with autopilot.
+
+Set course and heading (adjusted for wind speed) to next VOR.
+
+For ILS Localizer only use NAV1, it will not work with NAV 2.
+
+Step 3.1 Program the Flight Plan
+
+Using a basic instrument panel:
+
+Using the Garmin G1000 PFD and MFD:
+
+To fly on autopilot, click on the AP button and the Nav mode button. Clicking on the CDI softkey switches between GPS, VOR1 and VOR2 navigation modes that the autopilot will use.
+
+Click on the FPL softkey and open the flight plan. It will show you your route, from origin to destination with all the waypoints in between. If you have set up your flight plan using the FS2020 options, this will show exactly that and you may not need to make any changes. If you have set up your flight plan using SkyVector, you will need to input the changes as required.
+
+To add an additional VOR:
+
+Click on the NAV COM softkey. Input the frequencies for the additional way points.
+
+OR?
+On the MFD:
+
+Press the FMS button to add the input cursor. Then rotate the larger FMS knob to move the cursor up and down or right and left to get to where you want to make the change. CLick on the Clear/Cancel/Remove button to remove a waypoint. 
+A new waypoint is entered above the selected waypoint. The big knob moves the cursor while the small knob selects the letters of the alphabet in sequence. It auto-completes where possible.
+
+Click on the FMS button again to close the updated flight plan.
+
+
+
+Click on the ADF/DME softkey to get the distance to the next VOR station by selecting the NAV1 or NAV2 frequency that has the frequency for the VOR station.
+
+Step 3.2: Set the Transponder
+
+Click on the XPDR softkey for transponder settings. For a VFR flight select the VFR option in the XPDR menu. This will set the transponder to 1200. Turn on the transponder.
+
+Step 3.3: 
+
+
+
+Step X: Autopilot
+
+
+
+
+
+
+
+
+-->

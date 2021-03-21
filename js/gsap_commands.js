@@ -239,6 +239,8 @@ tl_1_1.to(panels_1_1, {xPercent: -100 * (panels_1_1.length - 1), ease: "none"}, 
 
 /* 
  * Section 1-2 and its objects
+ * For single panel sections do not include the snap attribute in ScrollTrigger
+ * or any animation. Use the callbacks to update TOC and page header, that's all.
  */
 
 let tl_1_2 = gsap.timeline({
@@ -454,25 +456,43 @@ tl_3_1.to(panels_3_1, {xPercent: -100 * (panels_3_1.length - 1), ease: "none"}, 
  * Section 3-2 and its objects
  */
 
-let panels_3_2 = gsap.utils.toArray(".panel-3-2");
-
 let tl_3_2 = gsap.timeline({
   scrollTrigger: {
+    id: "3_2",
     trigger: "#section-3-2",
     start: "top 0%",
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: () => "+=" + document.querySelector("#section-3-2").offsetWidth,
-    pin: "#section-3-2",
+    end: "bottom 25%",
     scrub: 1,
-    snap: 1 / (panels_3_2.length - 1),
     onEnter: () => { updateTOC(3,2); },
     onEnterBack: () => { updateTOC(3,2); },
     onLeave: () => {},
     onLeaveBack: () => {},
   }
+}); 
+
+/* 
+ * Section 3-3 and its objects
+ */
+
+let panels_3_3 = gsap.utils.toArray(".panel-3-3");
+
+let tl_3_3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-3-3",
+    start: "top 0%",
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: () => "+=" + document.querySelector("#section-3-3").offsetWidth,
+    pin: "#section-3-3",
+    scrub: 1,
+    snap: 1 / (panels_3_3.length - 1),
+    onEnter: () => { updateTOC(3,3); },
+    onEnterBack: () => { updateTOC(3,3); },
+    onLeave: () => {},
+    onLeaveBack: () => {},
+  }
 });
 
-tl_3_2.to(panels_3_2, {xPercent: -100 * (panels_3_2.length - 1), ease: "none"}, 0);
+tl_3_3.to(panels_3_3, {xPercent: -100 * (panels_3_3.length - 1), ease: "none"}, 0);
 
 /* 
  * Section Glossary and its objects
@@ -836,6 +856,12 @@ let updateTOC = (toc_group, toc_link)=> {
 let between = (x, min, max) => {
   return x >= min && x < max; //Keep equal only on one side so there is no overlap at boundary
 }
+
+/* Enable popovers everywhere */
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
 
 
 /******************************** 
